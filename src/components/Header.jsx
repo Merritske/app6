@@ -1,8 +1,14 @@
 
+//dropdownmenu met recepten
+//kiezen op ingrediënten 
+//zoekfunctie
+
 
 export default function Header() {
     let days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let date = new Date().getDay()
+
+
 
   return (
     <div className="header">

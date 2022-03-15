@@ -1,0 +1,19 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "title": "macaroni met hesp en prei",
+      "type": "easy"
+    }, 
+    {
+      "id": 2,
+      "title": "lasagna",
+      "type": "easy"
+    },
+    {
+      "id": 3,
+      "title": "friet met curryworst-special",
+      "type": "easy"
+    }
+  ]
+}
