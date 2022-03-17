@@ -45,7 +45,17 @@ setTitle("")
     <input 
     type="text"
     placeholder= "most important ingredients"
-    value= {headIng}
+    value= {headIng.meat}
+    onChange={(e)=> setHeadIng(e.target.value)} /> 
+    <input 
+    type="text"
+    placeholder= "most important ingredients"
+    value= {headIng.vegetable}
+    onChange={(e)=> setHeadIng(e.target.value)} /> 
+        <input 
+    type="text"
+    placeholder= "most important ingredients"
+    value= {headIng.pata}
     onChange={(e)=> setHeadIng(e.target.value)} /> 
 
 <label >

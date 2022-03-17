@@ -16,10 +16,10 @@ import Day from './components/Day';
   //in een week geen twee keer hetzelfde gerecht
 
 function App() {
- //fetch menu's
+
 const [menu, setMenu] = useState("")
 
-
+ //fetch menu's
 useEffect(async()=>{
   const res = await fetch("http://localhost:5000/menu")
   const data = await res.json()
