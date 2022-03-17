@@ -2,63 +2,163 @@
   "menu": [
     {
       "id": 1,
-      "title": "macaroni met hesp en prei",
+      "title": "macaroni met ham en prei",
+      "headIng": {
+        "meat": "ham",
+        "vegetable": "prei",
+        "pata": "macaroni"
+      },
       "type": "easy"
-    }, 
+    },
     {
       "id": 2,
       "title": "lasagna",
+      "headIng": {
+        "meat": "gehakt",
+        "vegetable": "wortelen, tomaten, ajuin",
+        "pata": "lasagna"
+      },
       "type": "easy"
     },
     {
       "id": 3,
       "title": "friet met curryworst-special",
+      "headIng": {
+        "meat": "curryworst",
+        "vegetable": "ajuin",
+        "pata": "friet"
+      },
       "type": "easy"
     },
     {
       "id": 4,
       "title": "tapas",
+      "headIng": {
+        "meat": "kippebillekes, chorizo, salami, inktvisringen",
+        "vegetable": "tomaten, komkommer, wortelen",
+        "pata": "gebakken patatjes"
+      },
       "type": "easy"
-    }, 
+    },
     {
       "id": 5,
       "title": "puree met knoselder en wortelen en cordon blue",
+      "headIng": {
+        "meat": "cordon blue",
+        "vegetable": "wortelen, knolselder",
+        "pata": "puree"
+      },
       "type": "easy"
     },
     {
       "id": 6,
       "title": "croque monsieur met verse groenten",
+      "headIng": {
+        "meat": "hesp en kaas",
+        "vegetable": "sla, komkommer, tomaten, wortelen, rode biet",
+        "pata": "boterham"
+      },
       "type": "easy"
     },
     {
       "id": 7,
       "title": "spaghetti bolognaise",
+      "headIng": {
+        "meat": "gehakt",
+        "vegetable": "ajuin, wortelen, tomaten, paprika, selder, look",
+        "pata": "macaroni"
+      },
       "type": "easy"
-    }, 
+    },
     {
       "id": 8,
       "title": "kip pesto pasta",
+      "headIng": {
+        "meat": "kip",
+        "vegetable": "pesto",
+        "pata": "spaghetti"
+      },
       "type": "easy"
     },
     {
       "id": 9,
       "title": "pensen met appelmoes",
+      "headIng": {
+        "meat": "pensen",
+        "vegetable": "appelmoes",
+        "pata": "boterham"
+      },
       "type": "easy"
     },
     {
       "id": 10,
       "title": "maaltijdsoep met kip en balletjes",
+      "headIng": {
+        "meat": "kip, balletjes",
+        "vegetable": "prei, wortelen, ajuin, look",
+        "pata": "patatje"
+      },
       "type": "easy"
-    }, 
+    },
     {
       "id": 11,
       "title": "witloof met hesp en kaassaus",
+      "headIng": {
+        "meat": "hesp",
+        "vegetable": "witloof",
+        "pata": "aardappelen"
+      },
       "type": "easy"
     },
     {
       "id": 12,
       "title": "friet met stoofvlees",
+      "headIng": {
+        "meat": "stoofvlees",
+        "vegetable": "tomaten, komkommer, rode biet, wortelen, sla",
+        "pata": "frietjes"
+      },
       "type": "easy"
+    },
+    {
+      "title": "videe met kroketjes",
+      "id": 13
+    },
+    {
+      "title": "scampi's met lookboter en ciabatta broodje",
+      "headIng": "ciabatta broodje",
+      "recipe": "",
+      "id": 14
+    },
+    {
+      "title": "",
+      "headIng": {
+        "meat": "",
+        "vegetable": "",
+        "pata": ""
+      },
+      "recipe": "",
+      "id": 15
+    },
+    {
+      "title": "",
+      "headIng": {
+        "meat": "",
+        "vegetable": "",
+        "pata": ""
+      },
+      "recipe": "",
+      "id": 16
+    },
+    {
+      "title": "",
+      "headIng": {
+        "meat": "",
+        "vegetable": "",
+        "pata": ""
+      },
+      "recipe": "",
+      "id": 17
     }
   ]
 }

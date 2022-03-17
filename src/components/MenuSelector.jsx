@@ -21,7 +21,7 @@ for(let i=0 ; i< menu.length; i++){
   return (
     <div> 
     
-<h1>
+<h1 className='menuselector-title'>
     Title : {titleM.join("**") }
 </h1>
 

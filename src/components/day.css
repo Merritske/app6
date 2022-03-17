@@ -1,0 +1,24 @@
+.day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    
+  }
+  .dayComp:hover{
+      cursor: pointer;
+      transform: scale(1.2);
+      z-index: 2; 
+         box-shadow: 0 0 5px 2px aquamarine, 0 0 5px 5px grey;
+         background-color: aliceblue;
+  }
+  .dayComp:active{
+      transform: scale(3);
+  }
+  .dayComp{
+    border: 2px solid black;
+    width: 500px;
+    margin: 10px;
+border-radius: 5px;
+    
+  }

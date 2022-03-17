@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from './Button'
 
 //button moet "add recipe" zeggen en dan wordt importMenu zichtbaar 
 //en de button moet veranderen in een submit
@@ -8,7 +9,8 @@ import React, { useState } from 'react'
     //moeilijkheidsgraad of tijdsbestek
 //head ingrediënts nog aanpassen : meat, vegetable, pata
 
-export default function ImportMenu({ onAdd }) {
+export default function ImportMenu({ onAdd, menu }) {
+    console.log(menu)
    let [title, setTitle] = useState("")
     let [headIng, setHeadIng] = useState({
         meat: "",
@@ -16,24 +18,41 @@ export default function ImportMenu({ onAdd }) {
         pata : ""
     })
   let [recipe, setRecipe] = useState("")
+  let [type, setType] = useState()
 
 const handleSubmit = (e) =>{
 e.preventDefault()
-onAdd({title})
+
+for(let x=0; x< menu.length; x++){
+     if( menu[x].title == {title}){
+    console.log ("recipe already exists")
+ 
+    }else {
+    onAdd({title, headIng, recipe})
+    console.log("piep")
+    
+    }
+      }
 setTitle("")
-
-
+setHeadIng({
+    meat: "",
+        vegetable: "",
+        pata : ""
+})
+setRecipe("")
+setType("checked")
 }
 
   return (
-    <div className='importMenu' onSubmit={handleSubmit}>
+    <div  >
 <fieldset>
 <legend>Fill in your favorite recipe </legend>
-<form>
+<form className='importMenu' onSubmit={handleSubmit}>
     <label >
         Recipe name
     </label>
     <input 
+   
     type="text"
     placeholder= "recipe name"
     value= {title}
@@ -44,17 +63,17 @@ setTitle("")
     </label>
     <input 
     type="text"
-    placeholder= "most important ingredients"
+    placeholder= "meat/fish"
     value= {headIng.meat}
     onChange={(e)=> setHeadIng(e.target.value)} /> 
     <input 
     type="text"
-    placeholder= "most important ingredients"
+    placeholder= "vegetables"
     value= {headIng.vegetable}
     onChange={(e)=> setHeadIng(e.target.value)} /> 
         <input 
     type="text"
-    placeholder= "most important ingredients"
+    placeholder= "pasta/patatoes/rice/couscous"
     value= {headIng.pata}
     onChange={(e)=> setHeadIng(e.target.value)} /> 
 
@@ -67,12 +86,17 @@ setTitle("")
     value= {recipe}
     onChange={(e)=> setRecipe(e.target.value)} />
 
-<button type="submit">Add recipe</button>
+   
+    <span> <label>
+        easy to make?
+    </label><input type="checkbox" name="easy" id="easy" /> </span>
+
+<Button text="Submit" color=""/>
 </form>
 
 </fieldset>
 
-
+{title}
 
     </div>
   )

@@ -16,8 +16,24 @@ import Day from './components/Day';
   //in een week geen twee keer hetzelfde gerecht
 
 function App() {
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+   let date = new Date().getDay()
 
-const [menu, setMenu] = useState("")
+  let newDays = days.slice(date)
+  for (let i = 0; i < date; i++) {
+    newDays.push(days[i])
+  }
+
+
+
+const [menu, setMenu] = useState([])
+const [day, setDay] = useState(days)
+const [newDay, setNewDay] = useState([day.slice(date)])
+console.log(day)
+useEffect(()=>{
+  setDay(day[date])
+  setNewDay(newDays )
+},[])
 
  //fetch menu's
 useEffect(async()=>{
@@ -26,7 +42,23 @@ useEffect(async()=>{
    setMenu(data)
   },[])
 
+//addMenu
+
+const addMenu = async(men)=>{
+
+const res = await fetch("http://localhost:5000/menu", {
+  method: "POST",
+headers: {
+  "content-type": "application/json"
+},
+body: JSON.stringify(men)
+})
+
+   const data = await res.json()
+setMenu([...menu, data])
  
+}
+
 // useEffect(()=>{
 //    fetch("http://localhost:5000/menu")
 //   .then(res => res.json())
@@ -42,10 +74,23 @@ console.log(dagmenu)
   return (
     <div className="App">
      <h1 className='title'>What's on the menu?</h1>
-     <Header />
+     <Header day={day} />
      <MenuSelector menu={menu} />
-     <ImportMenu />
-     <Day menu={dagmenu} />
+     <ImportMenu onAdd={addMenu} menu={menu}/>
+
+<br/>
+<br/>
+<br/>
+<br/>n
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+     <Day menu={dagmenu} newDays={newDays} />
 
 
     </div>

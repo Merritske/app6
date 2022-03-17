@@ -4,16 +4,12 @@
 //zoekfunctie
 
 
-export default function Header() {
-    let days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    let date = new Date().getDay()
-
-
-
+export default function Header({day}) {
+ 
   return (
     <div className="header">
 <div >
- <h2>Day of the week: {days[date]}</h2>
+ <h2>Day of the week: {day}</h2>
 </div>
 <div>
     {/*dropdownmenu ?*/}

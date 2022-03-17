@@ -1,4 +1,4 @@
-
+import "./day.css"
 
 
 
@@ -7,31 +7,25 @@
 //=>in week aanpassen??? met useState?
 
 
-export default function Day({ menu }) {
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  let date = new Date().getDay()
+export default function Day({ menu, newDays }) {
 
-  let newDays = days.slice(date)
-
-  for (let i = 0; i < date; i++) {
-    newDays.push(days[i])
-  }
 
   console.log(menu) //de menu titels
-
+//random recepten in de array zetten om toe te wijzen aan de dagen
   let dagM = []
   let randomM
+  //nakijken of recepte niet dubbel in de weekmenu is gezet
 function isInDagM(){
  return dagM = dagM.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
 }
   console.log(dagM)
+  //random een gerect toewijzen aan een dag
   newDays.forEach(() => {
-    randomM = Math.ceil(Math.random() * 11)
+    randomM = Math.ceil(Math.random() * 12)
     dagM.push(menu[randomM])
     isInDagM()
     menu.map((extra) => {
-      if (dagM.length <= 7) {
-        console.log(dagM.length)
+          if (dagM.length <= 7) {
         return dagM.push(extra)
       }
     })
