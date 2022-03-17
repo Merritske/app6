@@ -2,11 +2,13 @@ import Day from "./Day"
 
 
 export default function Week({menu}) {
-console.log(menu)
+
+
 
   return (
-    <div>
-    {/* {
+    <div> 
+      hello
+    {/* {/* {
         days.map((day, id)=>{
             console.log("hello")
       return  <h2
@@ -17,11 +19,13 @@ console.log(menu)
             //  <Day day = {day} />
         })
     
-    } */}
-          
+    } 
+     { newDays.map((day, index)=>   
     <Day 
  menu = {menu}
+key = {index}
     />
+     )} */}
 
     </div>
   )

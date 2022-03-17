@@ -14,6 +14,51 @@
       "id": 3,
       "title": "friet met curryworst-special",
       "type": "easy"
+    },
+    {
+      "id": 4,
+      "title": "tapas",
+      "type": "easy"
+    }, 
+    {
+      "id": 5,
+      "title": "puree met knoselder en wortelen en cordon blue",
+      "type": "easy"
+    },
+    {
+      "id": 6,
+      "title": "croque monsieur met verse groenten",
+      "type": "easy"
+    },
+    {
+      "id": 7,
+      "title": "spaghetti bolognaise",
+      "type": "easy"
+    }, 
+    {
+      "id": 8,
+      "title": "kip pesto pasta",
+      "type": "easy"
+    },
+    {
+      "id": 9,
+      "title": "pensen met appelmoes",
+      "type": "easy"
+    },
+    {
+      "id": 10,
+      "title": "maaltijdsoep met kip en balletjes",
+      "type": "easy"
+    }, 
+    {
+      "id": 11,
+      "title": "witloof met hesp en kaassaus",
+      "type": "easy"
+    },
+    {
+      "id": 12,
+      "title": "friet met stoofvlees",
+      "type": "easy"
     }
   ]
 }

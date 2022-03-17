@@ -3,40 +3,67 @@
 
 
 
-export default function Day({menu}) {
-    let days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    let date = new Date().getDay()
-   console.log(days)
- let newDays = days.slice(date )
+  //bij een volgende dag enkel de nieuwe een nieuw menu geven 
+  //=>in week aanpassen??? met useState?
 
-for(let i=0 ; i< date ; i++){
+
+export default function Day({ menu }) {
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  let date = new Date().getDay()
+
+  let newDays = days.slice(date)
+
+  for (let i = 0; i < date; i++) {
+    newDays.push(days[i])
+  }
+
+  console.log(menu) //de menu titels
+
+  let dagM = []
+
+  let randomM
+ function isInDagM(){
+   return dagM =  dagM.reduce((unique, item) => unique.includes(item)? unique: [...unique, item],[])
+  }
+
+  newDays.forEach(() => {
+    randomM = Math.ceil(Math.random() * 12)
+    dagM.push(menu[randomM])
+    console.log(dagM)
+
+      isInDagM() 
+ console.log(isInDagM())
+
+  
+  console.log("hello")
+ menu.map((extra)=>{
+   console.log("piep")
  
-newDays.push(days[i])
-    
-}
+ if(dagM.length <= 8 ){
 
-console.log(newDays)
-let dagmenu = menu[date]
+  dagM.push(extra)
+} })
+  })
 
-return ( <div className="day">
- {
-        newDays.map((day, index)=>{
-   
-      return   <div className="dayComp" key={index}>
-      <h2 >
-     Day of the week: {day} </h2>
-<img src="" alt="eten"/>
-<h1>{dagmenu}</h1>
-<p>Some extra's, eventueel hoofdingrediënten</p>
-        
-      </div> 
+ 
 
-          })
+ console.log(dagM)
 
-    
-    }
-         
+
+    return (<div className="day">
+      {
+        newDays.map((day, index) => {
+
+          return <div className="dayComp" key={index}>
+            <h2 >
+              Day of the week: {day} </h2>
+
+            <img src="" alt="eten" />
+            <h1>{dagM[index]}</h1>
+            <p>Some extra's, eventueel hoofdingrediënten of enkel als je erop klikt...</p>
+          </div>
+        })
+      }
 
     </div>)
-
-}
+  }
