@@ -19,6 +19,7 @@ function App() {
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
    let date = new Date().getDay()
 //push gebruiken of via useState de value of newDays veranderen?
+   //[...newDays, en dan de rest van de days arrray invoegen
   let newDays = days.slice(date)
   for (let i = 0; i < date; i++) {
     newDays.push(days[i])
