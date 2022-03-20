@@ -11,8 +11,6 @@ import React from 'react'
 
 export default function MenuSelector({menu}) {
 
-
-console.log(menu)
 let titleM = []
 for(let i=0 ; i< menu.length; i++){
   titleM.push(menu[i].title)

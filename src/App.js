@@ -6,6 +6,8 @@ import MenuSelector from './components/MenuSelector';
 
 import { useState, useEffect } from 'react';
 import Day from './components/Day';
+import Button from './components/Button';
+//import Week from './components/Week';
 
 //random week menu kiezen
 //menu's importeren via json file
@@ -29,7 +31,7 @@ function App() {
 const [menu, setMenu] = useState([])
 const [day, setDay] = useState(days)
 const [newDay, setNewDay] = useState([day.slice(date)])
-console.log(day)
+
 useEffect(()=>{
   setDay(day[date])
   setNewDay(newDays )
@@ -41,6 +43,9 @@ useEffect(async()=>{
   const data = await res.json()
    setMenu(data)
   },[])
+// weekmenu blijft niet meer staan enkel de dag van vandaag verandert
+
+console.log(menu)
 
 //addMenu
 
@@ -56,32 +61,41 @@ body: JSON.stringify(men)
 
    const data = await res.json()
 setMenu([...menu, data])
- 
+ setShowInp(false)
 }
-
+const [showInp, setShowInp] = useState(false)
 // useEffect(()=>{
 //    fetch("http://localhost:5000/menu")
 //   .then(res => res.json())
 //   .then(data => console.log(data))
 // },[])
-
 let dagmenu = []
 for(let x = 0; x< menu.length ; x++){
   dagmenu.push(menu[x].title)
 }
 console.log(dagmenu)
 
+
   return (
     <div className="App">
-     <h1 className='title'>What's on the menu?</h1>
+  <div>
+           <h1 className='title'>What's on the menu?</h1> 
+
+           <div className='app-header'>
      <Header day={day} />
-     <MenuSelector menu={menu} />
-     <ImportMenu onAdd={addMenu} menu={menu}/>
 
+ {showInp && <ImportMenu onAdd={addMenu} menu={menu} /> }
+   
+     <Button text=  {showInp ?  "Cancel" :"Add recipe"   } click={()=>setShowInp(!showInp)}  color=""/>
+      </div>
+  </div>
+   
+   
 <br/>
 <br/>
 <br/>
-<br/>n
+  <MenuSelector menu={menu} />
+<br/>
 <br/>
 <br/>
 <br/>
@@ -90,7 +104,7 @@ console.log(dagmenu)
 <br/>
 <br/>
 
-     <Day menu={dagmenu} newDays={newDays} />
+     <Day menu = {dagmenu} newDays={newDays} />
 
 
     </div>

@@ -1,7 +1,7 @@
 import Day from "./Day"
 
 
-export default function Week({menu}) {
+export default function Week({dagmenu, newDays}) {
 
 
 
@@ -19,13 +19,14 @@ export default function Week({menu}) {
             //  <Day day = {day} />
         })
     
-    } 
-     { newDays.map((day, index)=>   
+    } */}
+     {/* { newDays.map((day, index, menu)=>   
     <Day 
  menu = {menu}
 key = {index}
+day={day}
     />
-     )} */}
+     )}  */}
 
     </div>
   )

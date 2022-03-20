@@ -3,8 +3,17 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   
 }
+.app-header{
+  position: absolute;
+  top: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .title{
-  margin-top: 30px;
+
   height: 80px;
   background-color: grey;
   color: aquamarine;
@@ -14,14 +23,12 @@
  z-index: 3;
 }
 .header{
-  position: relative;
-  top: 150px;
+
   display: flex;
   justify-content: space-around;
 }
 .menuselector-title{
-  position: relative;
-top: 200px;
+color: aqua;
 }
 legend{
   font-size: 30px;
