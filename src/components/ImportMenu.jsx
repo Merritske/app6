@@ -16,8 +16,23 @@ export default function ImportMenu({ onAdd, menu }) {
         vegetable: "",
         pata: ""
     })
+   
+
     let [recipe, setRecipe] = useState("")
     let [type, setType] = useState("")
+const handleChange = (e, input)=>{
+switch(input){
+    case "meat":
+        setHeadIng({...headIng, meat : e.target.value})
+        break;
+        case "vegetable":
+        setHeadIng({...headIng,vegetable : e.target.value})
+        break;
+        case "pata":
+        setHeadIng({...headIng,pata : e.target.value})
+        break;
+}
+}
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -37,9 +52,10 @@ export default function ImportMenu({ onAdd, menu }) {
             meat: "",
             vegetable: "",
             pata: ""
-        })
+       })
         setRecipe("")
         setType("checked")
+    
     }
 
     return (
@@ -64,17 +80,17 @@ export default function ImportMenu({ onAdd, menu }) {
                         type="text"
                         placeholder="meat/fish"
                         value={headIng.meat}
-                        onChange={(e) => setHeadIng(e.target.value)} />
+                        onChange={(e)=> handleChange(e, "meat")} />
                     <input
                         type="text"
                         placeholder="vegetables"
                         value={headIng.vegetable}
-                        onChange={(e) => setHeadIng(e.target.value)} />
+                        onChange={(e)=> handleChange(e, "vegetable")} />
                     <input
                         type="text"
                         placeholder="pasta/patatoes/rice/couscous"
                         value={headIng.pata}
-                        onChange={(e) => setHeadIng(e.target.value)} />
+                        onChange={(e)=> handleChange(e, "pata")} />
 
                     <label >
                         How to make the recipe?
