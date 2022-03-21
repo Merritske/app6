@@ -169,6 +169,26 @@
       },
       "recipe": "open het conservenblik en zet het op een laag vuurtje. Een bouillonblokje is niet nodig ",
       "id": 17
+    },
+    {
+      "title": "prei en spekjes en pasta",
+      "headIng": {
+        "meat": "spekjes",
+        "vegetable": "prei",
+        "pata": "pasta"
+      },
+      "recipe": "Voeg tijdens het stoven een kwart van een bouillonblokje toe aan de prei  voor de smaak.",
+      "id": 18
+    },
+    {
+      "title": "broccolipuree met zalm",
+      "headIng": {
+        "meat": "zalm",
+        "vegetable": "broccoli",
+        "pata": "patatjes"
+      },
+      "recipe": "Voeg aan de broccolipuree een kwart van een bouillonblokje toe voor de smaak",
+      "id": 19
     }
   ]
 }
