@@ -151,23 +151,23 @@
       "id": 15
     },
     {
-      "title": "bloemkool met witte saus, hamburger en patatjes",
+      "title": "witte kool met spekjes",
       "headIng": {
-        "meat": "hamburger",
-        "vegetable": "bloemkool",
+        "meat": "spekjes",
+        "vegetable": "witte kool",
         "pata": "patatjes"
       },
       "recipe": "",
       "id": 16
     },
     {
-      "title": "bloemkool met witte saus, hamburger en patatjes",
+      "title": "ravioli",
       "headIng": {
-        "meat": "hamburger",
-        "vegetable": "bloemkool",
-        "pata": "patatjes"
+        "meat": "ravioli",
+        "vegetable": "",
+        "pata": ""
       },
-      "recipe": "",
+      "recipe": "open het conservenblik en zet het op een laag vuurtje. Een bouillonblokje is niet nodig ",
       "id": 17
     }
   ]
