@@ -18,12 +18,12 @@ export default function Day({ menu, day }) {
 
 
        <div className="dayComp" >
-          <h2 >
-            Day of the week: {day} </h2>
+          <h2 className="dayComp-day" >
+           {day} </h2>
 
           <img src="" alt="eten" />
           <h1>{menu }</h1>
-          <p>Some extra's, eventueel hoofdingrediënten of enkel als je erop klikt...</p>
+          <p className="dayComp-ingred">Some extra's, eventueel hoofdingrediënten of enkel als je erop klikt...</p>
         </div>
     
      

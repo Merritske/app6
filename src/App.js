@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import Day from './components/Day';
 import Button from './components/Button';
 import Week from './components/Week';
+import Footer from './components/Footer';
 //import Week from './components/Week';
 
 //random week menu kiezen
@@ -44,13 +45,12 @@ useEffect(async()=>{
   const res = await fetch("http://localhost:5000/menu")
   const data = await res.json()
    setMenu(data)
-  },[day])
+  },[])
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
 console.log(menu)
 
 //addMenu
-
 const addMenu = async(men)=>{
 
 const res = await fetch("http://localhost:5000/menu", {
@@ -65,12 +65,10 @@ body: JSON.stringify(men)
 setMenu([...menu, data])
  setShowInp(false)
 }
+
+//show add recipe
 const [showInp, setShowInp] = useState(false)
-// useEffect(()=>{
-//    fetch("http://localhost:5000/menu")
-//   .then(res => res.json())
-//   .then(data => console.log(data))
-// },[])
+
 
 
 //useState maken met de menu en dan pas de title en de ingrediënten eruit filteren 
@@ -106,10 +104,18 @@ return dagM = dagM.reduce((unique, item) => unique.includes(item) ? unique : [..
      randomM = Math.floor(Math.random() * 12)
         dagM.push(dagmenu[randomM])
 isInDagM() 
-  
+
 }
   }
 
+
+// useEffect((randomM, menu)=>{
+//     let newRecipe = menu[randomM]
+//   setAlle([...alle, newRecipe ] )
+
+// },[])
+
+//bij een nieuwe dag 
 
 //     
 //     menu.map((extra) => {
@@ -120,13 +126,13 @@ isInDagM()
 //  }
 //   })
 
- console.log(dagM)
+
 
   return (
     <div className="App">
   <div>
            <h1 className='title'>What's on the menu?</h1> 
-
+ </div>
            <div className='app-header'>
      <Header day={day} />
 
@@ -134,13 +140,13 @@ isInDagM()
    
      <Button text=  {showInp ?  "Cancel" :"Add recipe"   } click={()=>setShowInp(!showInp)}  color=""/>
       </div>
-  </div>
+ 
    
    
 <br/>
 <br/>
 <br/>
-  <MenuSelector menu={menu} />
+  {/* <MenuSelector menu={menu} /> */}
 <br/>
 <br/>
 <br/>
@@ -152,7 +158,7 @@ isInDagM()
 
   
 <Week menu={dagM} newDays={newDay} />
-
+<Footer />
     </div>
   );
 }

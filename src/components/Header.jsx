@@ -8,16 +8,22 @@ export default function Header({day}) {
  
   return (
     <div className="header">
-<div >
- <h2>Day of the week: {day}</h2>
-</div>
-<div>
-    {/*dropdownmenu ?*/}
-    
-    <h2>Recipes list</h2>
-   <h4>Ingredients list</h4>
 
-</div>
+ <h2 className="header-title">Day of the week: {day}</h2>
+
+
+    {/*dropdownmenu ?*/}
+    <ul className="menu-header">
+      <li>
+        Recipes list
+      </li>
+      <li>
+        Ingredients list
+      </li>
+    </ul>
+  
+
+
 
     </div>
   )
