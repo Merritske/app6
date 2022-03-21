@@ -136,7 +136,7 @@ isInDagM()
            <div className='app-header'>
      <Header day={day} />
 
- {showInp && <ImportMenu onAdd={addMenu} menu={menu} /> }
+ {showInp && <ImportMenu onAdd={addMenu} showInp={showInp} menu={menu} /> }
    
      <Button text=  {showInp ?  "Cancel" :"Add recipe"   } click={()=>setShowInp(!showInp)}  color=""/>
       </div>
