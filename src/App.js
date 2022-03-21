@@ -7,6 +7,7 @@ import MenuSelector from './components/MenuSelector';
 import { useState, useEffect } from 'react';
 import Day from './components/Day';
 import Button from './components/Button';
+import Week from './components/Week';
 //import Week from './components/Week';
 
 //random week menu kiezen
@@ -27,23 +28,23 @@ function App() {
     newDays.push(days[i])
   }
 
-
-
-const [menu, setMenu] = useState([])
 const [day, setDay] = useState(days)
 const [newDay, setNewDay] = useState([day.slice(date)])
 
 useEffect(()=>{
   setDay(day[date])
   setNewDay(newDays )
+
 },[])
 
+
+const [menu, setMenu] = useState([])
  //fetch menu's
 useEffect(async()=>{
   const res = await fetch("http://localhost:5000/menu")
   const data = await res.json()
    setMenu(data)
-  },[])
+  },[day])
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
 console.log(menu)
@@ -70,12 +71,56 @@ const [showInp, setShowInp] = useState(false)
 //   .then(res => res.json())
 //   .then(data => console.log(data))
 // },[])
+
+
+//useState maken met de menu en dan pas de title en de ingrediënten eruit filteren 
+//om in de HTML te tonen zodat de basic menu niet veranderd elke keer als renders
+//mag maar 1 ding veranderen = de nieuwe dag dus 
+// [...weekmenu, nieuwdagmenu]
+//herschrijven!!!!!!!!
+
 let dagmenu = []
+let ingredi = []
 for(let x = 0; x< menu.length ; x++){
   dagmenu.push(menu[x].title)
+  ingredi.push(menu[x].headIng)
 }
-console.log(dagmenu)
+console.log(ingredi)
 
+ 
+ //de menu titels
+// //random recepten in de array zetten om toe te wijzen aan de dagen
+let dagM = []
+let randomM
+
+//   //nakijken of recepte niet dubbel in de weekmenu is gezet
+function isInDagM(){
+return dagM = dagM.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
+}
+// // //met push werkte het bijna om het weekmenu niet te laten veranderen
+// //   //random een gerect toewijzen aan een dag
+//   newDays.forEach(() => {
+  for(let x = 0 ; x<= menu.length ; x++){
+        if (dagM.length < 7) {  
+ 
+     randomM = Math.floor(Math.random() * 12)
+        dagM.push(dagmenu[randomM])
+isInDagM() 
+  
+}
+  }
+
+
+//     
+//     menu.map((extra) => {
+       
+//         return setWeekM = [...weekM, extra ]
+//            })
+// isInDagM()
+//  }
+//   })
+
+ console.log(dagM)
 
   return (
     <div className="App">
@@ -105,8 +150,8 @@ console.log(dagmenu)
 <br/>
 <br/>
 
-     <Day menu = {dagmenu} newDays={newDays} />
-
+  
+<Week menu={dagM} newDays={newDay} />
 
     </div>
   );

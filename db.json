@@ -122,13 +122,26 @@
     },
     {
       "title": "videe met kroketjes",
-      "id": 13
+      "id": 13,  
+      "headIng": {
+        "meat": "videe",
+        "vegetable": "tomaten, komkommer, rode biet, wortelen, sla",
+        "pata": "kroketjes"
+      },
+      "type": "easy"
     },
     {
       "title": "scampi's met lookboter en ciabatta broodje",
-      "headIng": "ciabatta broodje",
-      "recipe": "",
-      "id": 14
+      "id": 14,
+      "headIng": {
+        "meat": "scampi",
+        "vegetable": "look",
+        "pata": "ciabatta broodje"
+      },
+      "type": "easy"
     }
+     
+    
+    
   ]
 }
