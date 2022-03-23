@@ -49,9 +49,11 @@ useEffect(async()=>{
 
 
 
-//addMenu
+//show/hide menu input
 const [showInp, setShowInp] = useState(false)
  console.log(showInp)
+
+ //addMenu
 const addMenu = async(men)=>{
   console.log("11")
 const res = await fetch("http://localhost:5000/menu", {
@@ -68,66 +70,12 @@ setMenu([...menu, data])
 
 }
 
-//show add recipe
 
 
 
 
-//useState maken met de menu en dan pas de title en de ingrediënten eruit filteren 
-//om in de HTML te tonen zodat de basic menu niet veranderd elke keer als renders
-//mag maar 1 ding veranderen = de nieuwe dag dus 
-// [...weekmenu, nieuwdagmenu]
-//herschrijven!!!!!!!!
-
-let dagmenu = []
-let ingredi = []
-for(let x = 0; x< menu.length ; x++){
-  dagmenu.push(menu[x].title)
-  ingredi.push(menu[x].headIng)
-}
-console.log(ingredi)
 
  
- //de menu titels
-// //random recepten in de array zetten om toe te wijzen aan de dagen
-let dagM = []
-let randomM
-
-//   //nakijken of recepte niet dubbel in de weekmenu is gezet
-function isInDagM(){
-return dagM = dagM.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
-}
-// // //met push werkte het bijna om het weekmenu niet te laten veranderen
-// //   //random een gerect toewijzen aan een dag
-//   newDays.forEach(() => {
-  for(let x = 0 ; x<= menu.length ; x++){
-        if (dagM.length < 7) {  
- 
-     randomM = Math.floor(Math.random() * 12)
-        dagM.push(dagmenu[randomM])
-isInDagM() 
-
-}
-  }
-
-
-// useEffect((randomM, menu)=>{
-//     let newRecipe = menu[randomM]
-//   setAlle([...alle, newRecipe ] )
-
-// },[])
-
-//bij een nieuwe dag 
-
-//     
-//     menu.map((extra) => {
-       
-//         return setWeekM = [...weekM, extra ]
-//            })
-// isInDagM()
-//  }
-//   })
-
 
 
   return (
@@ -159,7 +107,7 @@ isInDagM()
 <br/>
 
   
-<Week menu={dagM} newDays={newDay} />
+<Week menu={menu} newDays={newDay} />
 <Footer />
     </div>
   );

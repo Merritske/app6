@@ -12,10 +12,7 @@
          box-shadow: 0 0 5px 2px aquamarine, 0 0 5px 5px grey;
       
   }
-  .dayComp:active {
-      transform: scale(3);
-      background-color: rgba(30, 30, 60, 1);
-  }
+
   .dayComp{
     border: 2px solid black;
     width: 500px;
@@ -30,6 +27,15 @@ border-radius: 5px;
   .dayComp-ingred{
     color: rgb(124, 92, 52);
   }
-  .dayComp:active .dayComp-ingred{
+  .dayCompBig{
+    max-width: 350px;
+    transform: scale(2);
+    background-color : rgba(30, 30, 60, 1);
+    color: rgb(253, 226, 193);
+  }
+  .dayComp-dayBig{
+    color: rgb(206, 144, 68);
+  }
+.dayComp-ingredBig{
     color: rgb(253, 226, 193);
   }

@@ -41,16 +41,7 @@ console.log("2")
         console.log("4")
         e.preventDefault()
         onAdd({ title, headIng, recipe })
-        // for (let x = 0; x < menu.length; x++) {
-        //     if (title === menu[x].title) {
-        //         console.log("recipe already exists")
-
-        //     } else if (title !== menu[x].title) {
-        //         onAdd({ title, headIng, recipe })
-        //         console.log("piep")
-
-        //     }
-        // }
+ 
         // setTitle("")
         // setHeadIng({
         //     meat: "",

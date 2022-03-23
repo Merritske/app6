@@ -189,6 +189,16 @@
       },
       "recipe": "Voeg aan de broccolipuree een kwart van een bouillonblokje toe voor de smaak",
       "id": 19
+    },
+    {
+      "title": "tagliatelle met gerookte zalm en broccoli ",
+      "headIng": {
+        "meat": "gerookte zalm",
+        "vegetable": "broccoli",
+        "pata": "tagliatelle"
+      },
+      "recipe": "",
+      "id": 20
     }
   ]
 }
