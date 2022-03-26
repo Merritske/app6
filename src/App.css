@@ -3,7 +3,7 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-image: url("https://image.shutterstock.com/image-vector/cafe-pattern-doodle-tea-pots-600w-693144967.jpg");
 }
-.app-header{
+.app-header {
 position: fixed;
 top: 150px;
 width: 100%;
@@ -21,8 +21,43 @@ z-index: 2;
 
 }
 .dropdownMenu{
-  display: block;
+ 
+  display: blockflex;
   z-index: 10;
+  position: fixed;
+top: 180px;
+width: 100%;
+
+font-size: 20px;
+  background-color: rgb(37, 180, 199);
+  color: rgb(120,20,180);
+ 
+}
+.dropdownMenu>ul{
+   list-style-type: none;
+   margin: 30px;
+   position: relative;
+   left: 250px;
+   bottom: 40px;
+   text-align: start;
+}
+.dropmenuCloseBtn{
+  padding: 10px 30px;
+  position: relative;
+ left: 350px;
+ top: 350px;
+ background-color: rgb(120,20,180); 
+ color: rgb(37, 180, 199) ;
+ font-size: 30px;
+ border-radius: 5px;
+ z-index: inherit;
+}
+.dropmenuCloseBtn:hover{
+ background-color: aquamarine;
+ color: rgb(120,20,180);
+ cursor: pointer;
+ transform: scale(1.2);
+ box-shadow: 0 0 5px 5px rgb(30,30,60) 
 }
 .menu-header>li{
   margin: 25px;

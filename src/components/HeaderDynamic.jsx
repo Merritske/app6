@@ -7,90 +7,143 @@ import { useState, useEffect } from 'react';
 //zoekfunctie
 
 
-export default function HeaderDynamic({menu, day}) {
-  
-//show/hide menu input
-const [showInp, setShowInp] = useState(false)
+export default function HeaderDynamic({ menu, day }) {
+
+  //show/hide menu input
+  const [showInp, setShowInp] = useState(false)
 
 
-//addMenu
-const addMenu = async(men)=>{
-console.log("11")
-const res = await fetch("http://localhost:5000/menu", {
-method: "POST",
-headers: {
-"Content-type": "application/json"
-},
-body: JSON.stringify(men)
-})
-console.log("13")
+  //addMenu
+  const addMenu = async (men) => {
+    console.log("11")
+    const res = await fetch("http://localhost:5000/menu", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(men)
+    })
+    console.log("13")
 
-setShowInp(false)
+    setShowInp(false)
 
-}
-const [show, setShow] = useState(false)
-function handleClick(e){
-     e.preventDefault()
-console.log("pie")
-setShow(!show) 
+  }
+  const [show, setShow] = useState(false)
+  function handleClick(e) {
+    e.preventDefault()
+    console.log("pie")
+    setShow(true)
+  }
+  console.log(show)
 
-}
-console.log(show)
-
-//nog juiste zoek recept tonen maar vindt al wel het recept als je een zoekterm ingeeft
-
+  //nog juiste zoek recept tonen maar vindt al wel het recept als je een zoekterm ingeeft
+//uitgeschakeld 
   let titleStr = []
   let titleStrArr = []
-  menu.map((item)=>{
-  titleStr.push(item.title.toString() ) 
- })
-  
- function filterFunction(e){
-   e.preventDefault() 
-   console.log(titleStr)
+  let searchItem = []
+  let searchItemNew = []
+  menu.map((items) => {
+    titleStr.push(items.title.toString())
+  })
 
-   titleStr.map((item)=>{
-  titleStrArr =  item.toString()
-  console.log(titleStrArr)
-  if(titleStrArr.includes(e.target.value)){
-  console.log("nog maar eens proberen")
+  function filterFunction(e) {
+    e.preventDefault()
+    console.log(titleStr)
 
-           
-    }
-   
-   })
+    titleStr.map((item) => {
+      titleStrArr = item.toString()
+      console.log(item)
+      if (titleStrArr.includes(e.target.value)) {
+        console.log("nog maar eens proberen")
+    
+     searchItem =   [...searchItem, item]
+  //  
+       // searchItem.push(item)
+        console.log(searchItem)
+ searchItem.forEach((element) => {
+if(!searchItem.includes(element)){
+  searchItem = [...searchItem, element]
+}else {
+  searchItem = [...searchItem]
+console.log(searchItem)
+console.log(element)
+}
+  // 
+
+//         if (!searchItemNew.includes(element)) {
+//           searchItemNew.push(element) //werkt niet
+//         } 
+//           console.log(element)
+       
+       })
+
+ //  searchItem.filter((value, index)=> searchItem.indexOf(value) !== index) //werkt niet
+// searchItemNew = searchItem.filter((c, index)=>{ //werkt niet
+//   return searchItem.indexOf(c) !== index;
+//})
+      }
+     
+
+     
+    })
+   console.log(searchItem)
+
+const menuSel  = (e)=>{
+e.preventDefault()
+menu.map((item)=>{
+  if(item.title === e.target.value){
+    return (<div>
+      <h1> {item.title}</h1> 
+      <h2>{item.headIng.meat} </h2>
+      </div>)
+  }
+})
+ 
+}
 
   }
 
-    return (
-    <div className='app-header'>
+  return (
+    <div   >
+
+     {!show && <div className='app-header' >
+            <h2 className="header-title">Day of the week: {day}</h2>
+      <ul className="menu-header" >
+
+<li>  <h2 className='droplist' onClick={handleClick}>Recipe List</h2></li> 
+
+        <li>
+          <h2 className='droplist'>  Ingredients list</h2>
+        </li>
+      </ul>
+
+ <Button text={showInp ? "Cancel" : "Add recipe"} click={() => setShowInp(!showInp)} color="" />
+ </div>
+}
+       
+        {show && <div className='dropdownMenu' >
+
+          <button className='dropmenuCloseBtn' onClick={()=>show = true ? setShow(false): setShow(true)}>Close</button>
+          {/* <input type="text" placeholder='search...' onChange={filterFunction} /> */}
+          {/* <li className='livalue'>{searchItemNew}</li> */}
+         <ul onClick={menuSel}>
+                 { menu.map((item, index)=>(
    
-    <h2 className="header-title">Day of the week: {day}</h2>
-   
-   
-       {/*dropdownmenu ?
-       search/filter dropdown -> w3schools how to
-       */}
-       <ul className="menu-header">
-      
-            <h2 className='droplist' onClick={handleClick}>Recipe List</h2> 
-           {show && <div className='dropdownMenu'>
-              <input type="text" placeholder='search...' onChange={filterFunction}  />
-          { menu.map((item)=>(
-   
-   <li className='livalue' value={item.title} key={item.id} > {item.title}   
+   <li className='livalue' value={item.title} key={index}  > {item.title}   
     </li>
                     
-                ))  }  
-            </div>
-} 
+                ))  } 
+         </ul>
+     
+        </div>
+        }
 
 
 
 
 
 
-                {/* {
+        {/* {
                       show &&    
 <select value={value} >
           
@@ -101,19 +154,14 @@ console.log(show)
                       
                   ))  } 
                </select>} */}
-              
+
+
+
+      {showInp && <ImportMenu onAdd={addMenu} showInp={() => setShowInp(!showInp)} menu={menu} />}
+
      
-         <li>
-          <h2 className='droplist'>  Ingredients list</h2>
-         </li>
-       </ul>
-               
-    
-    {showInp && <ImportMenu onAdd={addMenu} showInp={()=>setShowInp(!showInp)} menu={menu} /> }
-      
-        <Button text=  {showInp ?  "Cancel" :"Add recipe"   } click={()=>setShowInp(!showInp)}  color=""/>
-         </div>
-   
-   
+    </div>
+
+
   )
 }

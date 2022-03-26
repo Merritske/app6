@@ -25,7 +25,7 @@ console.log(big)
 
 }
 //ingredi werkt, is object met meat, vegetable en pata
-console.log(ingredi.pata)//werkt niet?????!!!!! -> undefined???
+//console.log(ingredi.pata)//werkt niet?????!!!!! -> undefined???
 
 
   return (<div className="day" onClick={handleClick}>
