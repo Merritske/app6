@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 export default function Week({menu, newDays}) {
 
- let  randomM = Math.floor(Math.random() * 15)
+ let  randomM = Math.floor(Math.random() * menu.length)
 const [weekmenu, setWeekmenu] = useState([])
 //  useEffect(()=>{
 

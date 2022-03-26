@@ -1,30 +1,12 @@
 
-//dropdownmenu met recepten
-//kiezen op ingrediënten 
-//zoekfunctie
 
 
-export default function Header({day}) {
- 
+export default function Header() {
+
   return (
     <div className="header">
-
- <h2 className="header-title">Day of the week: {day}</h2>
-
-
-    {/*dropdownmenu ?*/}
-    <ul className="menu-header">
-      <li>
-        Recipes list
-      </li>
-      <li>
-        Ingredients list
-      </li>
-    </ul>
-  
-
-
-
+      <h1 className='title'>What's on the menu?</h1>
+      <h3 className='title' >Chez Moemoe Bouillon</h3>
     </div>
   )
 }

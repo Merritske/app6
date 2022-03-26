@@ -28,10 +28,14 @@ border-radius: 5px;
     color: rgb(124, 92, 52);
   }
   .dayCompBig{
-    max-width: 350px;
+   width: 450px;
+   height: 350px;
+   position: absolute;
+   top: 440px;
     transform: scale(2);
     background-color : rgba(30, 30, 60, 1);
     color: rgb(253, 226, 193);
+    z-index: 4;
   }
   .dayComp-dayBig{
     color: rgb(206, 144, 68);

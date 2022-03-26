@@ -1,7 +1,7 @@
 
 //import { useEffect, useState } from "react"
 
-import { useRef, useState } from "react"
+import {  useState } from "react"
 import "./day.css"
 
 
@@ -17,7 +17,7 @@ export default function Day({ menu, day, ingredi }) {
 
 const [big, setBig] = useState(true)
 
-const nameRef = useRef()
+
 function handleClick(e){
   e.preventDefault()
 setBig(!big)

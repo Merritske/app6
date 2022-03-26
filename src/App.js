@@ -1,12 +1,11 @@
 
 import './App.css';
-import Header from './components/Header';
-import ImportMenu from './components/ImportMenu';
+import HeaderDynamic from './components/HeaderDynamic';
+
 import MenuSelector from './components/MenuSelector';
 import { useState, useEffect } from 'react';
-import Button from './components/Button';
 import Week from './components/Week';
-import Footer from './components/Footer';
+
 
 
 //random week menu kiezen
@@ -18,79 +17,61 @@ import Footer from './components/Footer';
   //in een week geen twee keer hetzelfde gerecht
 
 function App() {
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-   let date = new Date().getDay()
+ 
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+let date = new Date().getDay()
 //push gebruiken of via useState de value of newDays veranderen?
-   //[...newDays, en dan de rest van de days arrray invoegen
-  let newDays = days.slice(date)
-  for (let i = 0; i < date; i++) {
-    newDays.push(days[i])
-  }
+//[...newDays, en dan de rest van de days arrray invoegen
+let newDays = days.slice(date)
+for (let i = 0; i < date; i++) {
+ newDays.push(days[i])
+}
 
 const [day, setDay] = useState(days)
 const [newDay, setNewDay] = useState([day.slice(date)])
 
 useEffect(()=>{
-  setDay(day[date])
-  setNewDay(newDays )
+setDay(day[date])
+setNewDay(newDays )
 console.log("12")
 },[])
 
 
 const [menu, setMenu] = useState([])
- //fetch menu's
+//fetch menu's
 useEffect(async()=>{
-  const res = await fetch("http://localhost:5000/menu")
-  const data = await res.json()
-   setMenu(data)
-   console.log("10")
-  },[])
+const res = await fetch("http://localhost:5000/menu")
+const data = await res.json()
+setMenu(data)
+console.log("10")
+},[])
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
+// const [obj, setObj] = useState({
+//   day : "",
+//   recept: {
+//     title : "",
+//     headIng : {
+//       meat: "",
+//       vegetable: "",
+//       pata: ""
+//     },
+//     recipe:"",
+//     type: "easy"
+//   }
+// })
+// newDay.map((day)=>{
+//   setObj([...obj, day={day} ])
+// })
 
-
-//show/hide menu input
-const [showInp, setShowInp] = useState(false)
- console.log(showInp)
-
- //addMenu
-const addMenu = async(men)=>{
-  console.log("11")
-const res = await fetch("http://localhost:5000/menu", {
-  method: "POST",
-headers: {
-  "Content-type": "application/json"
-},
-body: JSON.stringify(men)
-})
-console.log("13")
-   const data = await res.json()
-setMenu([...menu, data])
- setShowInp(false)
-
-}
-
-
-
-
-
-
+// console.log(obj)
  
 
 
   return (
     <div className="App">
-  <div>
-           <h1 className='title'>What's on the menu?</h1> 
- </div>
-           <div className='app-header'>
-     <Header day={day} />
-
- {showInp && <ImportMenu onAdd={addMenu} showInp={()=>setShowInp(!showInp)} menu={menu} /> }
-   
-     <Button text=  {showInp ?  "Cancel" :"Add recipe"   } click={()=>setShowInp(!showInp)}  color=""/>
-      </div>
  
+ <HeaderDynamic menu={menu} day={day} />
    
    
 <br/>
@@ -108,7 +89,7 @@ setMenu([...menu, data])
 
   
 <Week menu={menu} newDays={newDay} />
-<Footer />
+
     </div>
   );
 }
