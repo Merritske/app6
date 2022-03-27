@@ -13,7 +13,7 @@ import "./day.css"
 
 
 
-export default function Day({ menu, day, ingredi }) {
+export default function Day({ menu, day, ingredi, recipe }) {
 
 const [big, setBig] = useState(true)
 
@@ -45,7 +45,26 @@ console.log(big)
 
           <img src="" alt="eten" />
           <h1>{menu }</h1>
-          <p className="dayComp-ingredBig">Some ingred</p>
+          <p className="dayComp-ingredBig">
+            <ul>
+              <li>
+                 {ingredi.meat}
+              </li>
+              <li>
+                 {ingredi.vegetable}
+              </li>
+              <li>
+                 {ingredi.pata}
+              </li>
+              
+               
+            
+            </ul> 
+          
+           </p>
+           <p className="recipe">
+               {recipe}
+           </p>
         </div> } 
     
      

@@ -75,9 +75,11 @@ setWeekmenu([...weekmenu, menu[randomM] ])
 
 let dagmenu = []
 let ingredi = []
+let recipe = []
 for(let x = 0; x< weekmenu.length ; x++){
   dagmenu.push(weekmenu[x].title)
   ingredi.push(weekmenu[x].headIng)
+  recipe.push(weekmenu[x].recipe)
 }
  console.log(ingredi)
 
@@ -129,11 +131,13 @@ for(let x = 0; x< weekmenu.length ; x++){
     
     } */}
       { newDays.map((day, index)=>   
+    
     <Day 
 menu = {dagmenu[index]}
 key = {index}
 day={day}
-ingredi = {ingredi}
+ingredi = {ingredi[index]}
+recipe = {recipe[index]}
     />
      )}  
 
