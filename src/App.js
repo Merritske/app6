@@ -43,7 +43,7 @@ useEffect(async()=>{
 const res = await fetch(process.env.REACT_APP_API_URL)
 const data = await res.json()
 setMenu(data)
-console.log("10")
+console.log(data)
 },[])
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 

@@ -10,7 +10,7 @@ import "./headerDynamic.css"
 export default function HeaderDynamic({ menu, day }) {
 
   //show/hide menu input
-  const [showInp, setShowInp] = useState(false)
+  let [showInp, setShowInp] = useState(false)
 
 
   //addMenu
@@ -28,8 +28,8 @@ export default function HeaderDynamic({ menu, day }) {
     setShowInp(false)
 
   }
-  const [show, setShow] = useState(false)
-  const [showIng, setShowIng] = useState(false)
+  let [show, setShow] = useState(false)
+ let [showIng, setShowIng] = useState(false)
   function handleClick(e) {
     e.preventDefault()
     console.log("pie")
@@ -132,10 +132,9 @@ export default function HeaderDynamic({ menu, day }) {
   //als op een ingredient geklikt wordt, al de recepten tonen die dit ingredient hebben IDEM voor recepten
   //zoekfunctie op ingredienten
 
-  const [meatShow, setMeatShow] = useState(false)
-
-  const [vegetableShow, setVegetableShow] = useState(false)
-  const [pataShow, setPataShow] = useState(false)
+ let [meatShow, setMeatShow] = useState(false)
+let [vegetableShow, setVegetableShow] = useState(false)
+ let [pataShow, setPataShow] = useState(false)
   return (
     <div   >
 
@@ -143,18 +142,18 @@ export default function HeaderDynamic({ menu, day }) {
         <h2 className="header-title">Day of the week: {day}</h2>
         <ul className="menu-header" >
 
-          <li key="1" > <h2 className='droplist' onClick={handleClick}>Recipe List</h2>
+          <li key="droplist1" > <h2 className='droplist' onClick={handleClick}>Recipe List</h2>
 
           </li>
 
-          <li key="2" className='droplist' onClick={handleClickIng}>
+          <li key="droplist2" className='droplist' onClick={handleClickIng}>
             <h2 >  Ingredients list</h2>
             {displayDrop && <div className='dropdownMenu-ingred' >
 
               <ul className='droplistIng'>
-                <li key="2.1" onClick={(e) => setMeatShow(true)}>Meat</li>
-                <li key="2.2" onClick={(e) => setVegetableShow(true)}>Vegetable</li>
-                <li key="2.3" onClick={(e) => setPataShow(true)}>Pata</li>
+                <li key="droplist2.1" onClick={(e) => setMeatShow(true)}>Meat</li>
+                <li key="droplist2.2" onClick={(e) => setVegetableShow(true)}>Vegetable</li>
+                <li key="droplist2.3" onClick={(e) => setPataShow(true)}>Pata</li>
               </ul>    </div>}
           </li>
 
@@ -185,17 +184,17 @@ export default function HeaderDynamic({ menu, day }) {
        
         {ingred.map((item, index) => (
 
-          <div key={item.index}>
+          <div >
             {meatShow &&
-              <li value={item.meat} >
+              <li value={item.meat} key={item.index} >
                 {item.meat}
               </li>}
 
-            {vegetableShow && <li value={item.vegetable} >
+            {vegetableShow && <li value={item.vegetable} key={item.index}  >
               {item.vegetable}
             </li>}
 
-            {pataShow && <li value={item.pata} >
+            {pataShow && <li value={item.pata} key={item.index}>
               {item.pata}
             </li>}
           </div>
