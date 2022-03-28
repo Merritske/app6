@@ -45,7 +45,7 @@ console.log(big)
 
           <img src="" alt="eten" />
           <h1>{menu }</h1>
-          <p className="dayComp-ingredBig">
+          <div className="dayComp-ingredBig">
             <ul>
               <li>
                  {ingredi.meat}
@@ -61,7 +61,7 @@ console.log(big)
             
             </ul> 
           
-           </p>
+           </div>
            <p className="recipe">
                {recipe}
            </p>
