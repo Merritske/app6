@@ -151,9 +151,10 @@ let [vegetableShow, setVegetableShow] = useState(false)
             {displayDrop && <div className='dropdownMenu-ingred' >
 
               <ul className='droplistIng'>
+            
                 <li key="droplist2.1" onClick={(e) => setMeatShow(true)}>Meat</li>
                 <li key="droplist2.2" onClick={(e) => setVegetableShow(true)}>Vegetable</li>
-                <li key="droplist2.3" onClick={(e) => setPataShow(true)}>Pata</li>
+                <li key="droplist2.3" onClick={(e) => setPataShow(true)}>Pata</li>)
               </ul>    </div>}
           </li>
 
@@ -184,7 +185,7 @@ let [vegetableShow, setVegetableShow] = useState(false)
        
         {ingred.map((item, index) => (
 
-          <div >
+          <div key={index}>
             {meatShow &&
               <li value={item.meat} key={item.index} >
                 {item.meat}
