@@ -119,3 +119,21 @@
       color: rgb(6, 6, 124) !important;
      
      }
+     .livalue{
+      list-style-type: none;
+      margin: 50px;
+      position: relative;
+      left: 250px;
+      bottom: 40px;
+      text-align: start;
+      display: block;
+      z-index: 10;
+    top: 180px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    padding-left: 50px;
+    font-size: 20px;
+      background-color: rgb(37, 180, 199);
+      color: rgb(120,20,180);
+     }

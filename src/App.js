@@ -40,7 +40,7 @@ console.log("12")
 const [menu, setMenu] = useState([])
 //fetch menu's
 useEffect(async()=>{
-const res = await fetch("http://localhost:5000/menu")
+const res = await fetch(process.env.REACT_APP_API_URL)
 const data = await res.json()
 setMenu(data)
 console.log("10")

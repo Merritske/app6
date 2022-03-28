@@ -16,7 +16,7 @@ export default function HeaderDynamic({ menu, day }) {
   //addMenu
   const addMenu = async (men) => {
     console.log("11")
-    const res = await fetch("http://localhost:5000/menu", {
+    const res = await fetch(process.env.REACT_APP_API_URL, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -40,15 +40,19 @@ export default function HeaderDynamic({ menu, day }) {
     e.preventDefault()
     console.log("pie")
     setDisplayDrop(!displayDrop)
-   // setShowIng(true)
-  
-    
+    if(displayDrop){
+      setShowIng(true)
+    } else{
+  setMeatShow(false)
+  setVegetableShow(false)
+  setPataShow(false)
+}
   }
-//   window.onclick = function (event) {
-//     if (!event.target.matches('.droplistIng')) {
-// setDisplayDrop(false)
-//     }
-//   }
+  //   window.onclick = function (event) {
+  //     if (!event.target.matches('.droplistIng')) {
+  // setDisplayDrop(!displayDrop)
+  //     }
+  //   }
   console.log(displayDrop)
 
   //nog juiste zoek recept tonen maar vindt al wel het recept als je een zoekterm ingeeft
@@ -122,16 +126,16 @@ export default function HeaderDynamic({ menu, day }) {
     // }
 
   }
- 
+
   //meat, vegetable en pata dan daaronder zetten LAYOUTEN
   //zorgen dat het terug verdwijnt als ergens anders geklikt wordt
   //als op een ingredient geklikt wordt, al de recepten tonen die dit ingredient hebben IDEM voor recepten
   //zoekfunctie op ingredienten
- 
-const [meatShow, setMeatShow] = useState(false)
 
-const [vegetableShow, setVegetableShow] = useState(false)
-const [pataShow, setPataShow] = useState(false)
+  const [meatShow, setMeatShow] = useState(false)
+
+  const [vegetableShow, setVegetableShow] = useState(false)
+  const [pataShow, setPataShow] = useState(false)
   return (
     <div   >
 
@@ -145,13 +149,13 @@ const [pataShow, setPataShow] = useState(false)
 
           <li key="2" className='droplist' onClick={handleClickIng}>
             <h2 >  Ingredients list</h2>
-               {displayDrop && <div className='dropdownMenu-ingred' >
+            {displayDrop && <div className='dropdownMenu-ingred' >
 
-           <ul className='droplistIng'>
-              <li key="2.1" onClick={(e)=> setMeatShow(true)}>Meat</li>
-              <li key="2.2" onClick={(e)=>setVegetableShow(true) }>Vegetable</li>
-              <li key="2.3" onClick={(e)=> setPataShow(true) }>Pata</li>
-            </ul>    </div>}
+              <ul className='droplistIng'>
+                <li key="2.1" onClick={(e) => setMeatShow(true)}>Meat</li>
+                <li key="2.2" onClick={(e) => setVegetableShow(true)}>Vegetable</li>
+                <li key="2.3" onClick={(e) => setPataShow(true)}>Pata</li>
+              </ul>    </div>}
           </li>
 
         </ul>
@@ -174,33 +178,32 @@ const [pataShow, setPataShow] = useState(false)
           ))}
         </ul>
       </div>}
-   
-         {/* <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false) : setShowIng(true)}>Close</button> */}
-    
-        
-            {ingred.map((item, index) => (
 
-              <ul >
-               {meatShow &&
-                <li className='livalue' value={item.meat}  key={item.index}>
-                  {item.meat}
-                </li>}
+     
+     {showIng && <ul className='livalue' >
+  <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false)  : setShowIng(true)}>Close</button> 
+       
+        {ingred.map((item, index) => (
 
-              {vegetableShow &&  <li className='livalue' value={item.vegetable} key={item.index}>
-                  {item.vegetable}
-                </li>}
+          <div key={item.index}>
+            {meatShow &&
+              <li value={item.meat} >
+                {item.meat}
+              </li>}
 
-               {pataShow && <li className='livalue' value={item.pata} key={item.index}>
-                  {item.pata}
-                </li>}
-              </ul>
+            {vegetableShow && <li value={item.vegetable} >
+              {item.vegetable}
+            </li>}
+
+            {pataShow && <li value={item.pata} >
+              {item.pata}
+            </li>}
+          </div>
+        ))}
+
+      </ul>}
 
 
-
-            ))}     
-        
-   
-      
 
 
 
