@@ -45,6 +45,7 @@ const data = await res.json()
 setMenu(data)
 console.log(data)
 },[])
+
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
 // const [obj, setObj] = useState({
