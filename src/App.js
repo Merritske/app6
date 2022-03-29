@@ -2,10 +2,10 @@
 import './App.css';
 import HeaderDynamic from './components/HeaderDynamic';
 
-import MenuSelector from './components/MenuSelector';
+//import MenuSelector from './components/MenuSelector';
 import { useState, useEffect } from 'react';
 import Week from './components/Week';
-
+import  "./components/db.json"
 
 
 //random week menu kiezen

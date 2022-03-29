@@ -2,7 +2,7 @@ import Button from './Button';
 import ImportMenu from './ImportMenu';
 import { useState, useEffect } from 'react';
 import "./headerDynamic.css"
-
+import  "./db.json"
 //dropdownmenu met recepten
 //kiezen op ingrediënten 
 //zoekfunctie
