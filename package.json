@@ -1,6 +1,6 @@
 {
   "name": "app6",
-  "homepage": "/",
+  "homepage": "https://wat-eten-we-vandaag.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
