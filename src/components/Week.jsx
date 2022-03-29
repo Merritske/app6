@@ -18,8 +18,7 @@ if (weekmenu.length < 7) {
 
 
   menu.map(()=>{
-
-setWeekmenu([...weekmenu, menu[randomM] ])
+return setWeekmenu([...weekmenu, menu[randomM] ])
 
 })
 

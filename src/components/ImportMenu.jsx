@@ -8,7 +8,7 @@ import Button from './Button'
 //moeilijkheidsgraad of tijdsbestek
 //head ingrediënts nog aanpassen : meat, vegetable, pata
 
-export default function ImportMenu({ onAdd, menu, showInp }) {
+export default function ImportMenu({  menu, showInp }) {
 
     console.log("1")
     let [title, setTitle] = useState("")
@@ -22,6 +22,7 @@ console.log("2")
     let [recipe, setRecipe] = useState("")
     //let [type, setType] = useState( )
     const handleChange = (e, input) => {
+    
         switch (input) {
             case "meat":
                 setHeadIng({ ...headIng, meat: e.target.value })
@@ -37,25 +38,57 @@ console.log("2")
         }
     }
     console.log("3")
-    const handleSubmit = (e) => {
-        console.log("4")
-        e.preventDefault()
-        onAdd({ title, headIng, recipe })
+//     const  = (e) => {
+//         console.log("4")
+//         e.preventDefault()
+//         onAdd({ title, headIng, recipe })
  
-        // setTitle("")
-        // setHeadIng({
-        //     meat: "",
-        //     vegetable: "",
-        //     pata: ""
-        // })
-        // setRecipe("")
-        // setType("checked")
-console.log("5")
-    }
+//         // setTitle("")
+//         // setHeadIng({
+//         //     meat: "",
+//         //     vegetable: "",
+//         //     pata: ""
+//         // })
+//         // setRecipe("")
+//         // setType("checked")
+// console.log("5")
+//     }
+
+    const [obj, setObj] = useState({
+        recept: {
+          title : "",
+          headIng : {
+            meat: "",
+            vegetable: "",
+            pata: ""
+          },
+          recipe:"",
+          type: "easy"
+        }
+      })
+        //addMenu
+        const handleSubmit =  (e) => {
+          console.log("11")
+         setObj({
+            recept: {
+                title : "",
+                headIng : {
+                  meat: "",
+                  vegetable: "",
+                  pata: ""
+                },
+                recipe:"",
+                type: "easy"
+         }})
+        }
+      // newDay.map((day)=>{
+      //   setObj([...obj, day={day} ])
+      // })
+      
 
     return (
-        <div  >
-            <fieldset>
+        <div   >
+            <fieldset className='importMenu-field' >
                 <legend>Fill in your favorite recipe </legend>
                 <form className='importMenu' onSubmit={handleSubmit}>
                     <label >

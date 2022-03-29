@@ -5,7 +5,8 @@ import HeaderDynamic from './components/HeaderDynamic';
 //import MenuSelector from './components/MenuSelector';
 import { useState, useEffect } from 'react';
 import Week from './components/Week';
-import  "./components/db.json"
+import DB from  "./components/db.json"
+
 
 
 //random week menu kiezen
@@ -30,41 +31,21 @@ for (let i = 0; i < date; i++) {
 const [day, setDay] = useState(days)
 const [newDay, setNewDay] = useState([day.slice(date)])
 
-useEffect(()=>{
-setDay(day[date])
-setNewDay(newDays )
-console.log("12")
-},[])
+
 
 
 const [menus, setMenus] = useState([])
 //fetch menu's
 
-useEffect(async()=>{
-const res = await fetch("menu")
-const data = await res.json()
+useEffect(()=>{
+const data =  DB.menu
 setMenus(data)
-console.log(data)
+setDay(day[date])
+setNewDay(newDays )
 },[])
 
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
-// const [obj, setObj] = useState({
-//   day : "",
-//   recept: {
-//     title : "",
-//     headIng : {
-//       meat: "",
-//       vegetable: "",
-//       pata: ""
-//     },
-//     recipe:"",
-//     type: "easy"
-//   }
-// })
-// newDay.map((day)=>{
-//   setObj([...obj, day={day} ])
-// })
 
 // console.log(obj)
  

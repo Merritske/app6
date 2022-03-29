@@ -22,7 +22,7 @@
       position: fixed;
     top: 180px;
     width: 100%;
-    
+    height: fit-content;
     font-size: 20px;
       background-color: var(--blauwL) ;
       color:var(--paars) ;
@@ -40,7 +40,7 @@
       display: block;
       z-index: 10;
       position: absolute;
-    
+
     width: 100%;
     z-index: 13;
     font-size: 20px;
@@ -118,22 +118,4 @@
     .droplist:active{
       color:var(--blauwD) !important;
      
-     }
-     .livalue{
-      list-style-type: none;
-      margin: 50px;
-      position: relative;
-      left: 250px;
-      bottom: 40px;
-      text-align: start;
-      display: block;
-      z-index: 10;
-    top: 180px;
-    width: 100%;
-    height: fit-content;
-    padding: 10px;
-    padding-left: 50px;
-    font-size: 20px;
-      background-color:var(--blauwL);
-      color: var(--paars);
      }

@@ -13,22 +13,8 @@ export default function HeaderDynamic({ menu, day }) {
   //show/hide menu input
   let [showInp, setShowInp] = useState(false)
 
+   // setShowInp(false)
 
-  //addMenu
-  const addMenu = async (men) => {
-    console.log("11")
-    const res = await fetch("menu", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify(men)
-    })
-    console.log("13")
-
-    setShowInp(false)
-
-  }
   let [show, setShow] = useState(false)
  let [showIng, setShowIng] = useState(false)
   function handleClick(e) {
@@ -65,9 +51,11 @@ export default function HeaderDynamic({ menu, day }) {
 
   let ingred = []
   menu.map((items) => {
-    titleStr.push(items.title.toString())
+  titleStr.push(items.title.toString())
     ingred.push(items.headIng)
+
   })
+ 
   console.log(ingred)
 
   function filterFunction(e) {
@@ -181,12 +169,12 @@ let [vegetableShow, setVegetableShow] = useState(false)
       </div>}
 
      
-     {showIng && <ul className='livalue' >
+     {showIng && <ul className='dropdownMenu-recipe' >
   <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false)  : setShowIng(true)}>Close</button> 
        
         {ingred.map((item, index) => (
 
-          <div key={index}>
+          <div  key={index}>
             {meatShow &&
               <li value={item.meat} key={item.index} >
                 {item.meat}
@@ -225,7 +213,7 @@ let [vegetableShow, setVegetableShow] = useState(false)
 
 
 
-      {showInp && <ImportMenu onAdd={addMenu} showInp={() => setShowInp(!showInp)} menu={menu} />}
+      {showInp && <ImportMenu  showInp={() => setShowInp(!showInp)} menu={menu} />}
 
 
     </div>
