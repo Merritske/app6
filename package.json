@@ -16,11 +16,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port5000",
-    "dev": "concurrently \"npm run server\" \"cd client && npm start\""
+    "server": "json-server --watch db.json --port 5000",
+    "dev":"run-p server start"
   },
   "eslintConfig": {
     "extends": [
