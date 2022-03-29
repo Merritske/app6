@@ -2,6 +2,7 @@ import Button from './Button';
 import ImportMenu from './ImportMenu';
 import { useState, useEffect } from 'react';
 import "./headerDynamic.css"
+
 //dropdownmenu met recepten
 //kiezen op ingrediënten 
 //zoekfunctie
@@ -16,7 +17,7 @@ export default function HeaderDynamic({ menu, day }) {
   //addMenu
   const addMenu = async (men) => {
     console.log("11")
-    const res = await fetch(menu, {
+    const res = await fetch("menu", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
