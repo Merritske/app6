@@ -5,7 +5,7 @@ import HeaderDynamic from './components/HeaderDynamic';
 import MenuSelector from './components/MenuSelector';
 import { useState, useEffect } from 'react';
 import Week from './components/Week';
-
+import  "./components/db.json"
 
 
 //random week menu kiezen
@@ -37,13 +37,13 @@ console.log("12")
 },[])
 
 
-const [menu, setMenu] = useState([])
+const [menus, setMenus] = useState([])
 //fetch menu's
 
 useEffect(async()=>{
-const res = await fetch(process.env.REACT_APP_API_URL)
+const res = await fetch("menu")
 const data = await res.json()
-setMenu(data)
+setMenus(data)
 console.log(data)
 },[])
 
@@ -73,7 +73,7 @@ console.log(data)
   return (
     <div className="App">
  
- <HeaderDynamic menu={menu} day={day} />
+ <HeaderDynamic menu={menus} day={day} />
    
    
 <br/>
@@ -90,7 +90,7 @@ console.log(data)
 <br/>
 
   
-<Week menu={menu} newDays={newDay} />
+<Week menu={menus} newDays={newDay} />
 
     </div>
   );

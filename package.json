@@ -1,9 +1,7 @@
 {
   "name": "app6",
-  "homepage": "https://wat-eten-we-vandaag.vercel.app/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -19,9 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 5000",
-    "dev":"run-p server start"
+    "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
