@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from './Button'
-
+import DB from  "./db.json"
 
 //welke data invoeren? 
 //naam, hoofdingrediënten, recept, 
@@ -18,25 +18,22 @@ export default function ImportMenu({  menu, showInp }) {
         pata: ""
     })
 
+    const [obj, setObj] = useState({
+        recept: {
+          title : "",
+          headIng : {
+            meat: "",
+            vegetable: "",
+            pata: ""
+          },
+          recipe:"",
+          type: "easy"
+        }
+      })
 console.log("2")
     let [recipe, setRecipe] = useState("")
     //let [type, setType] = useState( )
-    const handleChange = (e, input) => {
     
-        switch (input) {
-            case "meat":
-                setHeadIng({ ...headIng, meat: e.target.value })
-                break;
-            case "vegetable":
-                setHeadIng({ ...headIng, vegetable: e.target.value })
-                break;
-            case "pata":
-                setHeadIng({ ...headIng, pata: e.target.value })
-                break;
-                default:
-                    console.log("oeps")
-        }
-    }
     console.log("3")
 //     const  = (e) => {
 //         console.log("4")
@@ -54,32 +51,41 @@ console.log("2")
 // console.log("5")
 //     }
 
-    const [obj, setObj] = useState({
-        recept: {
-          title : "",
-          headIng : {
-            meat: "",
-            vegetable: "",
-            pata: ""
-          },
-          recipe:"",
-          type: "easy"
-        }
-      })
         //addMenu
         const handleSubmit =  (e) => {
+        e.preventDefault()
           console.log("11")
          setObj({
             recept: {
-                title : "",
-                headIng : {
-                  meat: "",
-                  vegetable: "",
-                  pata: ""
-                },
-                recipe:"",
+                title : title,
+                headIng :headIng ,
+                recipe: recipe,
                 type: "easy"
          }})
+     
+              console.log(obj)
+        console.log(menu)
+    
+   
+        } 
+//           JSON.stringify(obj)
+//   DB.menu = [...menu, obj]
+//        console.log(DB.menu)
+          const handleChange = (e, input) => {
+    
+            switch (input) {
+                case "meat":
+                    setHeadIng({ ...headIng, meat: e.target.value })
+                    break;
+                case "vegetable":
+                    setHeadIng({ ...headIng, vegetable: e.target.value })
+                    break;
+                case "pata":
+                    setHeadIng({ ...headIng, pata: e.target.value })
+                    break;
+                    default:
+                        console.log("oeps")
+            }
         }
       // newDay.map((day)=>{
       //   setObj([...obj, day={day} ])
@@ -87,10 +93,17 @@ console.log("2")
       
 
     return (
-        <div   >
-            <fieldset className='importMenu-field' >
+        <div  className='importMenu-field-tijdelijk' >
+            <h1>
+                Het spijt me maar u kan geen recepten invoegen.
+                Indien u een leuk recept heeft kan u mij dit altijd mailen.
+             
+            </h1>
+   <a href='mailto:merritske@gmail.com'>Mail recept</a>
+
+            {/* <fieldset className='importMenu-field' >
                 <legend>Fill in your favorite recipe </legend>
-                <form className='importMenu' onSubmit={handleSubmit}>
+                <form className='importMenu' onSubmit={handleSubmit} >
                     <label >
                         Recipe name
                     </label>
@@ -134,11 +147,11 @@ console.log("2")
                         easy to make?
                     </label><input type="checkbox" name="easy" id="easy"   /> </span>
 
-                    <Button text="Save recipe" color="" onClick={showInp} />
+                 <Button text="Send Recipe" color="" click={showInp} />
 
                 </form>
 
-            </fieldset>
+            </fieldset> */}
 
 
             {title}

@@ -16,11 +16,11 @@
     
     }
     .dropdownMenu-recipe{
-     
-      display: block;
+     position: absolute;
+
+      display: flex;
       z-index: 10;
-      position: fixed;
-    top: 180px;
+    top:200px;
     width: 100%;
     height: fit-content;
     font-size: 20px;
@@ -29,12 +29,19 @@
      
     }
     .dropdownMenu-recipe>ul{
+      padding: 30px;
        list-style-type: none;
        margin: 30px;
        position: relative;
        left: 250px;
        bottom: 40px;
        text-align: start;
+       
+    }
+    .dropdownMenu-recipe>button{
+      position: fixed;
+      top: 100px;
+left: 1200px;
     }
     .dropdownMenu-ingred{
       display: block;

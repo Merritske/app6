@@ -55,8 +55,33 @@ export default function HeaderDynamic({ menu, day }) {
     ingred.push(items.headIng)
 
   })
- 
-  console.log(ingred)
+  let itemM =[]
+  ingred.map((item)=>{
+   itemM.push(item.meat)
+console.log(itemM)
+  })
+  let meat = itemM.filter((c, index) => {
+    return itemM.indexOf(c) === index;
+});
+console.log(meat)
+let itemV =[]
+ingred.map((item)=>{
+ itemV.push(item.vegetable)
+})
+let vegetable = itemV.filter((c, index) => {
+  return itemV.indexOf(c) === index;
+});
+
+let itemP =[]
+ingred.map((item)=>{
+ itemP.push(item.pata)
+console.log(itemM)
+})
+let pata = itemP.filter((c, index) => {
+  return itemP.indexOf(c) === index;
+});
+
+
 
   function filterFunction(e) {
     e.preventDefault()
@@ -155,7 +180,7 @@ let [vegetableShow, setVegetableShow] = useState(false)
 
       {show && <div className='dropdownMenu-recipe' >
 
-        <button className='dropmenuCloseBtn' onClick={() => show = true ? setShow(false) : setShow(true)}>Close</button>
+   <button className='dropmenuCloseBtn' onClick={() => show = true ? setShow(false) : setShow(true)}>Close</button> 
         {/* <input type="text" placeholder='search...' onChange={filterFunction} /> */}
         {/* <li className='livalue'>{searchItemNew}</li> */}
         <ul >
@@ -169,28 +194,34 @@ let [vegetableShow, setVegetableShow] = useState(false)
       </div>}
 
      
-     {showIng && <ul className='dropdownMenu-recipe' >
+     {showIng && <div className='dropdownMenu-recipe' >
   <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false)  : setShowIng(true)}>Close</button> 
-       
-        {ingred.map((item, index) => (
+      
+     
 
-          <div  key={index}>
-            {meatShow &&
-              <li value={item.meat} key={item.index} >
-                {item.meat}
-              </li>}
+          
+            {meatShow &&  <ul> 
+              {meat.map((item, index)=>(
+                <li value={meat} key={item.index} >
+                {item}
+              </li>
+              ))}
+              </ul>}
 
-            {vegetableShow && <li value={item.vegetable} key={item.index}  >
-              {item.vegetable}
-            </li>}
+            {vegetableShow && <ul> 
+              {vegetable.map((item, index)=>(
+            <li value={vegetable} key={item.index}  >
+              {item}
+            </li>))}
+</ul>}
+            {pataShow && <ul> 
+              {pata.map((item, index)=>(
+              <li value={pata} key={item.index}>
+              {item}
+            </li>))}
+       </ul>}
 
-            {pataShow && <li value={item.pata} key={item.index}>
-              {item.pata}
-            </li>}
-          </div>
-        ))}
-
-      </ul>}
+      </div>}
 
 
 
