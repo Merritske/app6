@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import Button from './Button'
-import DB from  "./db.json"
+// import React, { useState } from 'react'
+// import Button from './Button'
+// import DB from  "./db.json"
 
 //welke data invoeren? 
 //naam, hoofdingrediënten, recept, 
@@ -10,86 +10,86 @@ import DB from  "./db.json"
 
 export default function ImportMenu({  menu, showInp }) {
 
-    console.log("1")
-    let [title, setTitle] = useState("")
-    let [headIng, setHeadIng] = useState({
-        meat: "",
-        vegetable: "",
-        pata: ""
-    })
+//     console.log("1")
+//     let [title, setTitle] = useState("")
+//     let [headIng, setHeadIng] = useState({
+//         meat: "",
+//         vegetable: "",
+//         pata: ""
+//     })
 
-    const [obj, setObj] = useState({
-        recept: {
-          title : "",
-          headIng : {
-            meat: "",
-            vegetable: "",
-            pata: ""
-          },
-          recipe:"",
-          type: "easy"
-        }
-      })
-console.log("2")
-    let [recipe, setRecipe] = useState("")
-    //let [type, setType] = useState( )
+//     const [obj, setObj] = useState({
+//         recept: {
+//           title : "",
+//           headIng : {
+//             meat: "",
+//             vegetable: "",
+//             pata: ""
+//           },
+//           recipe:"",
+//           type: "easy"
+//         }
+//       })
+// console.log("2")
+//     let [recipe, setRecipe] = useState("")
+//     //let [type, setType] = useState( )
     
-    console.log("3")
-//     const  = (e) => {
-//         console.log("4")
-//         e.preventDefault()
-//         onAdd({ title, headIng, recipe })
+//     console.log("3")
+// //     const  = (e) => {
+// //         console.log("4")
+// //         e.preventDefault()
+// //         onAdd({ title, headIng, recipe })
  
-//         // setTitle("")
-//         // setHeadIng({
-//         //     meat: "",
-//         //     vegetable: "",
-//         //     pata: ""
-//         // })
-//         // setRecipe("")
-//         // setType("checked")
-// console.log("5")
-//     }
+// //         // setTitle("")
+// //         // setHeadIng({
+// //         //     meat: "",
+// //         //     vegetable: "",
+// //         //     pata: ""
+// //         // })
+// //         // setRecipe("")
+// //         // setType("checked")
+// // console.log("5")
+// //     }
 
-        //addMenu
-        const handleSubmit =  (e) => {
-        e.preventDefault()
-          console.log("11")
-         setObj({
-            recept: {
-                title : title,
-                headIng :headIng ,
-                recipe: recipe,
-                type: "easy"
-         }})
+//         //addMenu
+//         const handleSubmit =  (e) => {
+//         e.preventDefault()
+//           console.log("11")
+//          setObj({
+//             recept: {
+//                 title : title,
+//                 headIng :headIng ,
+//                 recipe: recipe,
+//                 type: "easy"
+//          }})
      
-              console.log(obj)
-        console.log(menu)
+//               console.log(obj)
+//         console.log(menu)
     
    
-        } 
-//           JSON.stringify(obj)
-//   DB.menu = [...menu, obj]
-//        console.log(DB.menu)
-          const handleChange = (e, input) => {
+//         } 
+// //           JSON.stringify(obj)
+// //   DB.menu = [...menu, obj]
+// //        console.log(DB.menu)
+//           const handleChange = (e, input) => {
     
-            switch (input) {
-                case "meat":
-                    setHeadIng({ ...headIng, meat: e.target.value })
-                    break;
-                case "vegetable":
-                    setHeadIng({ ...headIng, vegetable: e.target.value })
-                    break;
-                case "pata":
-                    setHeadIng({ ...headIng, pata: e.target.value })
-                    break;
-                    default:
-                        console.log("oeps")
-            }
-        }
-      // newDay.map((day)=>{
-      //   setObj([...obj, day={day} ])
-      // })
+//             switch (input) {
+//                 case "meat":
+//                     setHeadIng({ ...headIng, meat: e.target.value })
+//                     break;
+//                 case "vegetable":
+//                     setHeadIng({ ...headIng, vegetable: e.target.value })
+//                     break;
+//                 case "pata":
+//                     setHeadIng({ ...headIng, pata: e.target.value })
+//                     break;
+//                     default:
+//                         console.log("oeps")
+//             }
+//         }
+//       // newDay.map((day)=>{
+//       //   setObj([...obj, day={day} ])
+//       // })
       
 
     return (
@@ -154,7 +154,7 @@ console.log("2")
             </fieldset> */}
 
 
-            {title}
+        
 
         </div>
     )

@@ -1,6 +1,6 @@
 import Button from './Button';
 import ImportMenu from './ImportMenu';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import "./headerDynamic.css"
 import  "./db.json"
 //dropdownmenu met recepten
@@ -26,9 +26,10 @@ export default function HeaderDynamic({ menu, day }) {
   function handleClickIng(e) {
     e.preventDefault()
     console.log("pie")
-    setDisplayDrop(!displayDrop)
+    setDisplayDrop(!displayDrop) 
+      setShowIng(false)
     if(displayDrop){
-      setShowIng(true)
+      setShowIng(true) 
     } else{
   setMeatShow(false)
   setVegetableShow(false)
@@ -45,28 +46,26 @@ export default function HeaderDynamic({ menu, day }) {
   //nog juiste zoek recept tonen maar vindt al wel het recept als je een zoekterm ingeeft
   //uitgeschakeld 
   let titleStr = []
-  let titleStrArr = []
-  let searchItem = []
-  let searchItemNew = []
 
   let ingred = []
-  menu.map((items) => {
+  menu.map((items) =>  {
+ 
   titleStr.push(items.title.toString())
     ingred.push(items.headIng)
 
   })
   let itemM =[]
   ingred.map((item)=>{
-   itemM.push(item.meat)
-console.log(itemM)
+ return  itemM.push(item.meat)
+
   })
   let meat = itemM.filter((c, index) => {
     return itemM.indexOf(c) === index;
 });
-console.log(meat)
+
 let itemV =[]
 ingred.map((item)=>{
- itemV.push(item.vegetable)
+return itemV.push(item.vegetable)
 })
 let vegetable = itemV.filter((c, index) => {
   return itemV.indexOf(c) === index;
@@ -74,37 +73,40 @@ let vegetable = itemV.filter((c, index) => {
 
 let itemP =[]
 ingred.map((item)=>{
- itemP.push(item.pata)
-console.log(itemM)
+ return itemP.push(item.pata)
+
 })
 let pata = itemP.filter((c, index) => {
   return itemP.indexOf(c) === index;
 });
 
 
+// let titleStrArr = []
+// let searchItem = []
+// let searchItemNew = []
 
-  function filterFunction(e) {
-    e.preventDefault()
-    console.log(titleStr)
+//   function filterFunction(e) {
+//     e.preventDefault()
+//     console.log(titleStr)
 
-    titleStr.map((item) => {
-      titleStrArr = item.toString()
-      console.log(item)
-      if (titleStrArr.includes(e.target.value)) {
-        console.log("nog maar eens proberen")
+//     titleStr.map((item) => {
+//       titleStrArr = item.toString()
+//       console.log(item)
+//       if (titleStrArr.includes(e.target.value)) {
+//         console.log("nog maar eens proberen")
 
-        searchItem = [...searchItem, item]
-        //  
-        // searchItem.push(item)
-        console.log(searchItem)
-        searchItem.forEach((element) => {
-          if (!searchItem.includes(element)) {
-            searchItem = [...searchItem, element]
-          } else {
-            searchItem = [...searchItem]
-            console.log(searchItem)
-            console.log(element)
-          }
+//         searchItem = [...searchItem, item]
+//         //  
+//         // searchItem.push(item)
+//         console.log(searchItem)
+//         searchItem.forEach((element) => {
+//           if (!searchItem.includes(element)) {
+//             searchItem = [...searchItem, element]
+//           } else {
+//             searchItem = [...searchItem]
+//             console.log(searchItem)
+//             console.log(element)
+//           }
           // 
 
           //         if (!searchItemNew.includes(element)) {
@@ -112,18 +114,18 @@ let pata = itemP.filter((c, index) => {
           //         } 
           //           console.log(element)
 
-        })
+       // })
 
         //  searchItem.filter((value, index)=> searchItem.indexOf(value) !== index) //werkt niet
         // searchItemNew = searchItem.filter((c, index)=>{ //werkt niet
         //   return searchItem.indexOf(c) !== index;
         //})
-      }
+  //    }
 
 
 
-    })
-    console.log(searchItem)
+   // })
+  
 
     // const menuSel  = (e)=>{
     // e.preventDefault()
@@ -139,7 +141,7 @@ let pata = itemP.filter((c, index) => {
 
     // }
 
-  }
+ // }
 
   //meat, vegetable en pata dan daaronder zetten LAYOUTEN
   //zorgen dat het terug verdwijnt als ergens anders geklikt wordt
@@ -195,28 +197,29 @@ let [vegetableShow, setVegetableShow] = useState(false)
 
      
      {showIng && <div className='dropdownMenu-recipe' >
-  <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false)  : setShowIng(true)}>Close</button> 
+   <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false)  : setShowIng(true)}>Close</button>  
       
      
 
           
             {meatShow &&  <ul> 
               {meat.map((item, index)=>(
-                <li value={meat} key={item.index} >
+                <li value={meat} key={index} >
                 {item}
               </li>
-              ))}
-              </ul>}
+              ))}  
+              </ul>
+            }
 
             {vegetableShow && <ul> 
               {vegetable.map((item, index)=>(
-            <li value={vegetable} key={item.index}  >
+            <li value={vegetable} key={index}  >
               {item}
             </li>))}
 </ul>}
             {pataShow && <ul> 
               {pata.map((item, index)=>(
-              <li value={pata} key={item.index}>
+              <li value={pata} key={index}>
               {item}
             </li>))}
        </ul>}

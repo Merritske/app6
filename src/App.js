@@ -27,14 +27,15 @@ let newDays = days.slice(date)
 for (let i = 0; i < date; i++) {
  newDays.push(days[i])
 }
-
+const [menus, setMenus] = useState([])
 const [day, setDay] = useState(days)
 const [newDay, setNewDay] = useState([day.slice(date)])
 
+let  randomM = Math.floor(Math.random() * menus.length)
 
+ console.log(day)
+ console.log(newDay)
 
-
-const [menus, setMenus] = useState([])
 //fetch menu's
 
 useEffect(()=>{
@@ -47,7 +48,7 @@ setNewDay(newDays )
 // weekmenu blijft niet meer staan enkel de dag van vandaag verandert
 
 
-// console.log(obj)
+console.log(menus)
  
 
 
@@ -60,7 +61,7 @@ setNewDay(newDays )
 <br/>
 <br/>
 <br/>
-  {/* <MenuSelector menu={menu} /> */}
+  {/* <MenuSelector menu={menus} /> */}
 <br/>
 <br/>
 <br/>
@@ -71,7 +72,7 @@ setNewDay(newDays )
 <br/>
 
   
-<Week menu={menus} newDays={newDay} />
+ <Week menu={menus} newDays={newDay} /> 
 
     </div>
   );

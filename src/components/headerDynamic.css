@@ -17,11 +17,13 @@
     }
     .dropdownMenu-recipe{
      position: absolute;
+     display: flex;
+  
+     flex-direction: row;
 
-      display: flex;
       z-index: 10;
     top:200px;
-    width: 100%;
+ width: 100%;
     height: fit-content;
     font-size: 20px;
       background-color: var(--blauwL) ;
@@ -38,17 +40,13 @@
        text-align: start;
        
     }
-    .dropdownMenu-recipe>button{
-      position: fixed;
-      top: 100px;
-left: 1200px;
-    }
+
     .dropdownMenu-ingred{
       display: block;
       z-index: 10;
       position: absolute;
 
-    width: 100%;
+ 
     z-index: 13;
     font-size: 20px;
       background-color:var(--blauwL);
@@ -78,9 +76,7 @@ left: 1200px;
     }
     .dropmenuCloseBtn{
       padding: 10px 30px;
-      position: relative;
-     left: 350px;
-     top: 350px;
+   
      background-color: var(--paars); 
      color: var(--blauwL) ;
      font-size: 30px;
@@ -89,9 +85,9 @@ left: 1200px;
     }
     .dropmenuCloseBtn:hover{
      background-color: var(--blauwL);
-     color: var(--paars);
+     color: var(--blauwD);
      cursor: pointer;
-     transform: scale(1.2);
+     transform: scale(1.5, 1);
      box-shadow: 0 0 5px 5px rgb(30,30,60) 
     }
     .menu-header>li{
