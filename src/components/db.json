@@ -8,7 +8,7 @@
         "vegetable": "prei",
         "pata": "macaroni"
       },
-      "recipe":"Doe voldoende water in een pot, zet de pot op het vuur. \nAls het water kookt doe dan de macaroni in het water. Stoof de prei (eventueel met een teentje look erbij). \nOm te controleren de macaroni gaar is, gooi een macaroni stukje tegen het plafond. Als het blijft plakken is het gaar. Maak kaassaus, vergeet geen kwart bouillonblokje toe te voegen, doe er de hamblokjes en de prei onder en de macaroni. Goed onder elkaar zetten en klaar.",
+      "recipe":"Doe voldoende water in een pot, zet de pot op het vuur. Als het water kookt doe dan de macaroni in het water. Stoof de prei (eventueel met een teentje look erbij). \nOm te controleren of de macaroni gaar is, gooi een macaroni stukje tegen het plafond. Als het blijft plakken is het gaar. Maak kaassaus, vergeet geen kwart bouillonblokje toe te voegen, doe er de hamblokjes en de prei onder en de macaroni. Goed onder elkaar zetten en klaar.",
       "type": "easy"
     },
     {
@@ -129,7 +129,7 @@
         "vegetable": "tomaten, komkommer, rode biet, wortelen, sla",
         "pata": "frietjes"
       },
-      "recipe": "Zelf gemaakte frietjes smaken zoveel beter dan diepvries frietjes maar het vraagt enige ervaring om ze goed te bakken. Blijven oefenen.",
+      "recipe": "Zelf gemaakte frietjes smaken zoveel beter dan diepvries frietjes maar het vraagt enige ervaring om ze goed te bakken. Probeer ook eens frietjes van pastinaak te maken, overheerlijk! En als je dit niet tegen de kinderen zegt, zullen ze wel eens raar kijken bij de eerste hap maar ze eten er hun buikje evengoed van vol. Wel geen echte frieten erbij doen want dan smaken ze het verschil wel.",
       "type": "easy"
     },
     {
@@ -213,6 +213,26 @@
       },
       "recipe": "Dit wordt ook wel luie-wijven-eten genoemd omdat het snel klaar is en je kan het in één pot maken. \nDoe voldoende water in een pot, zet de pot op het vuur. \nAls het water kookt doe dan de tagliatelle en de diepvries broccoli in het water(eventueel een teentje look). \nOm te controleren of alles gaar is, prik met een vork in de broccoli en gooi een sliert tagliatelle tegen het plafond.\nAls de sliert blijft plakken is de tagliatelle gaar, als je gemakkelijk met je vork in de broccoli kan prikken is de broccoli gaar. \nGiet het water uit de pot, doe er room bij, een half bouillon blokje en de gerookte zalm in stukjes gesneden. Roer alles goed door elkaar en klaar. ",
       "id": 20
+    },
+    {
+      "title": "gestoomde groenten met patatjes en kotelet ",
+      "headIng": {
+        "meat": "kotelet",
+        "vegetable": "broccoli, wortelen, ajuin, bloemkool, ....",
+        "pata": "patatjes"
+      },
+      "recipe":"Niets zo gemakkelijk als alles in de stoomkoker te gooien. Je hoeft niet alle twee minuten het deksel van het vuur halen om te kijken of de patatjes niet aan het aanbranden zijn dus kan je ondertussen de strijk doen. Op een half uurtje is die wasmand leeg en het eten zo goed als klaar. Maak nog een sausje met de jus van het vlees. Neem het vlees uit de pan, doe er een beetje water in en zet terug op het vuur, een beetje maizena erbij en vergeet geen kwart bouillonblokje voor de smaak. ",
+      "id": 21
+    },
+    {
+      "title": "spinazie met fishsticks en spirelli",
+      "headIng": {
+        "meat": "fishsticks",
+        "vegetable": "spinazie",
+        "pata": "spirelli"
+      },
+      "recipe": "Je moet er niet mee inzitten om diepvries spinazie te gebruiken, dat wordt vers ingevrozen en al de goede vitamientjes zitten er nog in. Ik neem altijd spinazie met room onder, soms durf ik er zelfs nog wat extra room bijdoen maar dan doe ik er ook nog een kwart bouillonblokje bij voor de smaak. ",
+      "id": 22
     }
   ]
 }

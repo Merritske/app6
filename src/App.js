@@ -6,6 +6,7 @@ import HeaderDynamic from './components/HeaderDynamic';
 import { useState, useEffect } from 'react';
 import Week from './components/Week';
 import DB from  "./components/db.json"
+import Modal from './components/Modal';
 
 
 
@@ -39,6 +40,7 @@ let  randomM = Math.floor(Math.random() * menus.length)
 //fetch menu's
 
 useEffect(()=>{
+ 
 const data =  DB.menu
 setMenus(data)
 setDay(day[date])
@@ -54,9 +56,11 @@ console.log(menus)
 
   return (
     <div className="App">
- 
+
+
  <HeaderDynamic menu={menus} day={day} />
-   
+    
+<Modal  />
    
 <br/>
 <br/>

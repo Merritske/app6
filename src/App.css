@@ -73,3 +73,11 @@ width: 180px;
   transform: scale(1.2);
   box-shadow: 0 0 5px 5px rgb(30,30,60) ;
 }
+.printLijst{
+  list-style-type: none;
+ text-align: start;
+  background-color: var(--blauwL);
+  color: var(--blauwD);
+  margin: 30px;
+  padding: 20px;
+}

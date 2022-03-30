@@ -1,7 +1,8 @@
 const style ={
     backgroundColor: "rgb(130,130,160)",
     height: 50,
-padding: 20
+padding: 20,
+textAlign: "center"
 }
 
 export default function Footer() {
