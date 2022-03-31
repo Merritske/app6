@@ -8,11 +8,6 @@ export default function Week({ menu, newDays }) {
 const [print, setPrint] = useState(false)
   const [weekmenu, setWeekmenu] = useState([])
 
- 
-  console.log(menu)
-
- 
-    console.log(menu)
 
       console.log("hoal")
       let uniqueWeek = []
@@ -29,7 +24,7 @@ const [print, setPrint] = useState(false)
        
       })
    }
-   console.log(weekmenu)
+
      
   let dagmenu = []
   let ingredi = []

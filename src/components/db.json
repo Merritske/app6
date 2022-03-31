@@ -28,7 +28,7 @@
       "headIng": {
         "meat": "curryworst",
         "vegetable": "ajuin",
-        "pata": "friet"
+        "pata": "frietjes"
       },
       "recipe":"Zelf gemaakte frietjes smaken zoveel beter dan diepvries frietjes maar het vraagt enige ervaring om ze goed te bakken. Blijven oefenen. Curryworst-special is niet zo speciaal, gewoon opensnijden, na of voor het bakken al naargelang je goesting, en daarna vullen met fijngesnipperde ajuin, ketchup en mayonaise erop doen en klaar.",
       "type": "easy"
@@ -39,7 +39,7 @@
       "headIng": {
         "meat": "kippebillekes, chorizo, salami, inktvisringen",
         "vegetable": "tomaten, komkommer, wortelen",
-        "pata": "gebakken patatjes"
+        "pata": "patatjes"
       },
 "recipe":"Alles waar je zin in hebt kan je op tafel zetten.\r Lekker bij een goede fles wijn.",
       "type": "easy"
@@ -50,7 +50,7 @@
       "headIng": {
         "meat": "cordon blue",
         "vegetable": "wortelen, knolselder",
-        "pata": "puree"
+        "pata": "patatjes"
       },
       "recipe":"Vergeet geen bouillonblokje toe te voegen, een kwart is voldoende.",
       "type": "easy"
@@ -72,7 +72,7 @@
       "headIng": {
         "meat": "gehakt",
         "vegetable": "ajuin, wortelen, tomaten, paprika, selder, look",
-        "pata": "macaroni"
+        "pata": "spaghetti"
       },
       "recipe":"Spaghettisaus kan je zelf maken: doe de ajuin, de wortelen, de look en de andere groenten in stukjes in een grote pot, doe het gehakt erbij en roeren maar. Als het gehakt gebakken is doe je er de tomatenblokjes bij. Gebruik geen passata anders is de saus te lopend. Doe er voor de smaak een bouillonblokje bij, eventueel twee afhankelijk van de grootte van je pot.",
       "type": "easy"
@@ -105,7 +105,7 @@
       "headIng": {
         "meat": "kip, balletjes",
         "vegetable": "prei, wortelen, ajuin, look",
-        "pata": "patatje"
+        "pata": "patatjes"
       },
       "recipe":"Gebruik een kippenbouillonblokje. Per 500ml water mag je 1 bouillonblokje gebruiken voor de smaak.",
       "type": "easy"
@@ -116,7 +116,7 @@
       "headIng": {
         "meat": "hesp",
         "vegetable": "witloof",
-        "pata": "aardappelen"
+        "pata": "patatjes"
       },
       "recipe":"Vergeet aan de kaassaus geen kwart bouillonblokje toe te voegen voor de smaak ",
       "type": "easy"
@@ -185,11 +185,11 @@
       "id": 17
     },
     {
-      "title": "prei en spekjes en pasta",
+      "title": "prei en spekjes en penne",
       "headIng": {
         "meat": "spekjes",
         "vegetable": "prei",
-        "pata": "pasta"
+        "pata": "penne"
       },
       "recipe": "Voeg tijdens het stoven een kwart van een bouillonblokje toe aan de prei voor de smaak.",
       "id": 18

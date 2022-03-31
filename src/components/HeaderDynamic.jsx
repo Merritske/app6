@@ -11,9 +11,12 @@ import  "./db.json"
 export default function HeaderDynamic({ menu, day }) {
 
   //show/hide menu input
-  let [showInp, setShowInp] = useState(false)
 
-   // setShowInp(false)
+  let [showInp, setShowInp] = useState(false)
+  let [meatShow, setMeatShow] = useState(false)
+  let [vegetableShow, setVegetableShow] = useState(false)
+   let [pataShow, setPataShow] = useState(false)
+  let [displayDrop, setDisplayDrop] = useState(false)
 
   let [show, setShow] = useState(false)
  let [showIng, setShowIng] = useState(false)
@@ -22,7 +25,7 @@ export default function HeaderDynamic({ menu, day }) {
     console.log("pie")
     setShow(true)
   }
-  let [displayDrop, setDisplayDrop] = useState(false)
+
   function handleClickIng(e) {
     e.preventDefault()
     console.log("pie")
@@ -36,12 +39,8 @@ export default function HeaderDynamic({ menu, day }) {
   setPataShow(false)
 }
   }
-  //   window.onclick = function (event) {
-  //     if (!event.target.matches('.droplistIng')) {
-  // setDisplayDrop(!displayDrop)
-  //     }
-  //   }
-  console.log(displayDrop)
+
+
 
   //nog juiste zoek recept tonen maar vindt al wel het recept als je een zoekterm ingeeft
   //uitgeschakeld 
@@ -80,77 +79,36 @@ let pata = itemP.filter((c, index) => {
   return itemP.indexOf(c) === index;
 });
 
+//searchfunction
 
-// let titleStrArr = []
-// let searchItem = []
-// let searchItemNew = []
+let titleStrArr = []
+let searchItem = []
+let searchItemNew = []
+let li = document.getElementsByClassName("livalue")
+   function filterFunction(e) {
+     for(let x=0 ; x< li.length; x++){
+      // console.log(li.item(x).innerHTML)
+ 
+       //  console.log(i) //elke letter apart
+            if(li.item(x).innerHTML.indexOf(e.target.value) >-1){
+         console.log("hoera")
+             console.log(li.item(x).innerHTML)
+         // searchItem.push(li.item(x).innerHTML)
+       }
 
-//   function filterFunction(e) {
-//     e.preventDefault()
-//     console.log(titleStr)
-
-//     titleStr.map((item) => {
-//       titleStrArr = item.toString()
-//       console.log(item)
-//       if (titleStrArr.includes(e.target.value)) {
-//         console.log("nog maar eens proberen")
-
-//         searchItem = [...searchItem, item]
-//         //  
-//         // searchItem.push(item)
-//         console.log(searchItem)
-//         searchItem.forEach((element) => {
-//           if (!searchItem.includes(element)) {
-//             searchItem = [...searchItem, element]
-//           } else {
-//             searchItem = [...searchItem]
-//             console.log(searchItem)
-//             console.log(element)
-//           }
-          // 
-
-          //         if (!searchItemNew.includes(element)) {
-          //           searchItemNew.push(element) //werkt niet
-          //         } 
-          //           console.log(element)
-
-       // })
-
-        //  searchItem.filter((value, index)=> searchItem.indexOf(value) !== index) //werkt niet
-        // searchItemNew = searchItem.filter((c, index)=>{ //werkt niet
-        //   return searchItem.indexOf(c) !== index;
-        //})
-  //    }
+    
+     }
+//console.log(searchItem)
+   }
 
 
-
-   // })
-  
-
-    // const menuSel  = (e)=>{
-    // e.preventDefault()
-    // menu.map((item)=>{
-    //   if(item.title === e.target.value){
-    //     console.log("plop")
-    //     // return (<div>
-    //     //   <h1> {item.title}</h1> 
-    //     //   <h2>{item.headIng.meat} </h2>
-    //     //   </div>)
-    //   }
-    // })
-
-    // }
-
- // }
 
   //meat, vegetable en pata dan daaronder zetten LAYOUTEN
   //zorgen dat het terug verdwijnt als ergens anders geklikt wordt
   //als op een ingredient geklikt wordt, al de recepten tonen die dit ingredient hebben IDEM voor recepten
   //zoekfunctie op ingredienten
 
- let [meatShow, setMeatShow] = useState(false)
-let [vegetableShow, setVegetableShow] = useState(false)
- let [pataShow, setPataShow] = useState(false)
+
   return (
     <div   >
 
@@ -184,12 +142,16 @@ let [vegetableShow, setVegetableShow] = useState(false)
       {show && <div className='dropdownMenu-recipe' >
 
    <button className='dropmenuCloseBtn' onClick={() => show = true ? setShow(false) : setShow(true)}>Close</button> 
-        {/* <input type="text" placeholder='search...' onChange={filterFunction} /> */}
+
+
+
         {/* <li className='livalue'>{searchItemNew}</li> */}
-        <ul >
+        <ul > 
+           <input type="text" placeholder='search...' onChange={filterFunction} />
+
           {menu.map((item, index) => (
 
-            <li value={item.title} key={index}  > {item.title}
+            <li className='livalue' value={item.title} key={index}  > {item.title}
             </li>
 
           ))}
