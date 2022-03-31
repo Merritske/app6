@@ -154,6 +154,7 @@ let [vegetableShow, setVegetableShow] = useState(false)
   return (
     <div   >
 
+
       {!show && !showIng && <div className='app-header' >
         <h2 className="header-title">Day of the week: {day}</h2>
         <ul className="menu-header" >
@@ -163,14 +164,14 @@ let [vegetableShow, setVegetableShow] = useState(false)
           </li>
 
           <li key="droplist2" className='droplist' onClick={handleClickIng}>
-            <h2 >  Ingredients list</h2>
+            <h2 >Ingredients list</h2>
             {displayDrop && <div className='dropdownMenu-ingred' >
 
               <ul className='droplistIng'>
             
-                <li key="droplist2.1" onClick={(e) => setMeatShow(true)}>Meat</li>
-                <li key="droplist2.2" onClick={(e) => setVegetableShow(true)}>Vegetable</li>
-                <li key="droplist2.3" onClick={(e) => setPataShow(true)}>Pata</li>
+                <li className='dropListIngL' key="droplist2.1" onClick={(e) => setMeatShow(true)}><span className='spanDrop'> Meat</span> </li>
+                <li className='dropListIngL' key="droplist2.2" onClick={(e) => setVegetableShow(true)}><span className='spanDrop'> Vegetable</span> </li>
+                <li className='dropListIngL' key="droplist2.3" onClick={(e) => setPataShow(true)}><span className='spanDrop'> Pata </span></li>
               </ul>    </div>}
           </li>
 
@@ -223,6 +224,8 @@ let [vegetableShow, setVegetableShow] = useState(false)
               {item}
             </li>))}
        </ul>}
+   
+
 
       </div>}
 

@@ -24,6 +24,15 @@ setBig(!big)
 console.log(big)
 
 }
+let dayCompBig = document.getElementsByClassName("dayCompBig")
+function toggleNav(e){
+dayCompBig.add.classList("open")
+//dayCompBig.fadeOut()
+dayCompBig.delay(300).animate({
+  scrollTop: e.target.offset().top
+}, 500);
+}
+
 //ingredi werkt, is object met meat, vegetable en pata
 //console.log(ingredi.pata)//werkt niet?????!!!!! -> undefined???
 
@@ -31,7 +40,7 @@ console.log(big)
   return (<div className="day" onClick={handleClick}>
 
 
-    {big? <div className="dayComp" > 
+    {big? <div className="dayComp" onClick={toggleNav} > 
           <h2 className="dayComp-day" >
            {day} </h2>
 

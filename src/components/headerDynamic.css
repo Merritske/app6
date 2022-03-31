@@ -13,6 +13,8 @@
     .menu-header{
       list-style: none;
       display: flex;
+  
+      padding: 20px;
     
     }
     .dropdownMenu-recipe{
@@ -56,24 +58,87 @@
     
     
     .droplistIng{
-    
+          box-shadow: 8px 8px 10px 10px rgba(0,0,0,0.2);
       position: relative;
     
     background-color: var(--blauwL);
       min-width: 180px;
-      box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
+
     
     }
     .droplistIng>li{
       color: var(--paars);
       padding: 22px 30px;
       text-decoration: none;
-      display: block;
+      display: block; 
+
       z-index: 13;
     }
-    .droplistIng>li:hover{
+  
+
+ .spanDrop:hover{
         color: var(--blauwD);
     }
+ /* .spanDrop:after, .spanDrop:before, .droplistIngL:before, .droplistIngL:after{
+      position: absolute;
+      background-color: #ffe800;
+      display: block;
+      content: "";
+    }
+
+  .droplistIngL:after{
+    width: 0;
+      height: 3px;
+     left: 0;
+   top: 0;
+      transition: all .1s .2s 
+  }
+  .droplistIngL:before{
+    width: 3px;
+    height: 0; 
+   left: 0;
+ bottom: 0;
+    transition: all .1s 3s
+  }
+   .spanDrop:before {
+      width: 3px;
+      height: 0;
+  top: 0;
+      right: 0;
+
+
+      transition: all .1s .1s 
+    } 
+
+ .spanDrop:after{
+      width: 0;
+      height: 3px;
+
+ right: 0;
+ bottom: 0;
+
+      transition: all .1s 
+    }
+   
+  .droplistIngL:hover:before{
+
+      height: 100%;
+      transition: all .1s ;
+    }
+   .droplistIngL:hover:after {
+      width: 100%;
+      transition: all .1s .2s ;
+    }
+    .spanDrop:hover:after{
+      width: 100%;
+      transition: all .1s .2s ;
+    }
+   .spanDrop:hover:before{
+      height: 100%;
+      transition: all .1s .3s ;
+    } */
+
+
     .dropmenuCloseBtn{
       padding: 10px 30px;
    
@@ -90,9 +155,7 @@
      transform: scale(1.5, 1);
      box-shadow: 0 0 5px 5px rgb(30,30,60) 
     }
-    .menu-header>li{
-      margin: 25px;
-    }
+ 
     .title:first-child {
     padding: 20px;
     font-size: 50px;
@@ -109,40 +172,47 @@
     .header-title{
       margin: 20px;
     }
-    /* .droplist{
+    .droplist{
       cursor: pointer;
      position: relative;
       display: inline-block;
-    } */
-    .droplist:after{
-      display: block;
+margin-inline: 30px;
+    } 
+   
+   
+    .droplist:after , .droplist:before{
+      display: inline;
       content: "";
-      position:absolute;
-      left: 50%;
-      bottom: 0;
       width: 0%;
-      height: 3px;
+      height: 5px;
       background-color: var(--blauwD);
       transform: translateX(-50%);
-      transition: all 0.3 cubic-bezier(0.68, -0.55, 0.265. 1.55);
+      transition:all .5s ;
+      position: absolute;
     }
-    .droplist:before{
-      position:absolute;
-      left: 50%;
-      width: 0%;
-      height: 3px;
-      background-color: var(--blauwD);
-      transform: translateX(-50%);
-      transition: all 0.3 cubic-bezier(0.68, -0.55, 0.265. 1.55);
-    }
+  
     .droplist:hover:after{
    width: 100%;
-    
+margin-top: 5px;
     }
     .droplist:hover:before{
       width: 100%;
+      margin-top: -10px;
     }
-    .droplist:active{
+
+    .droplist:hover, .droplist:active{
       color:var(--blauwD) !important;
-     
      }
+
+     .btn-10 a{padding:0;}
+.btn-10 a span{display:block; padding:0 30px;}
+.btn-10 a:before, .btn-10 a:after, .btn-10 a span:before, .btn-10 a span:after{position:absolute; background-color:#ffe800;}
+.btn-10 a:before{width:3px; height:0; left:0; bottom:0; -webkit-transition:all .1s .3s; -o-transition:all .1s .3s; transition:all .1s .3s;}
+.btn-10 a:after{width:0; height:3px; left:0; top:0; -webkit-transition:all .1s .2s; -o-transition:all .1s .2s; transition:all .1s .2s;}
+.btn-10 a span:before{width:3px; height:0; right:0; top:0; -webkit-transition:all .1s .1s; -o-transition:all .1s .1s; transition:all .1s .1s;}
+.btn-10 a span:after{width:0; height:3px; right:0; bottom:0; -webkit-transition:all .1s; -o-transition:all .1s; transition:all .1s;}
+.btn-10 a:hover:before{height:100%; -webkit-transition:all .1s; -o-transition:all .1s;	transition:all .1s;}
+.btn-10 a:hover:after{width:100%; -webkit-transition:all .1s .1s; -o-transition:all .1s .1s; transition:all .1s .1s;}
+.btn-10 a:hover span:before{height:100%; -webkit-transition:all .1s .2s; -o-transition:all .1s .2s; transition:all .1s .2s;}
+.btn-10 a:hover span:after{width:100%;	-webkit-transition:all .1s .3s;	-o-transition:all .1s .3s; transition:all .1s .3s;}
+nav a:hover{color:#ffe800;}

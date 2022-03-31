@@ -47,11 +47,11 @@ let list =[]
     
   })
 function handleClick(){
-  setPrint(true)
+  setPrint(!print)
 
 }
 function handlePrint (){
-  setPrint(false)
+  setPrint(!print)
   window.print()
 }
 
@@ -73,11 +73,13 @@ return (<li key={index} >{item} </li>)
         })
     }
    <button onClick={handlePrint}> Print </button>
+    <Button text="Close" click={()=>{setPrint(false)}} color="" />
     </ul>
 
   }
   {!print && <div>
     <Button text="Print menu" click={handleClick} color="" />
+   
       {newDays.map((day, index) =>
 
         <Day
