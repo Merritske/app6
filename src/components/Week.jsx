@@ -63,7 +63,10 @@ function handlePrint (){
     <div>
   
   {
-    print && <ul className="printLijst">
+    print && 
+
+  
+    <ul className="printLijst">
       {
         list.map((item, index)=>{
 return (<li key={index} >{item} </li>)

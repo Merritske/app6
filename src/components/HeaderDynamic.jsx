@@ -158,7 +158,7 @@ let [vegetableShow, setVegetableShow] = useState(false)
         <h2 className="header-title">Day of the week: {day}</h2>
         <ul className="menu-header" >
 
-          <li key="droplist1" > <h2 className='droplist' onClick={handleClick}>Recipe List</h2>
+          <li key="droplist1" className='droplist'> <h2  onClick={handleClick}>Recipe List</h2>
 
           </li>
 

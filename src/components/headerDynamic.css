@@ -109,14 +109,38 @@
     .header-title{
       margin: 20px;
     }
-    .droplist{
+    /* .droplist{
       cursor: pointer;
      position: relative;
       display: inline-block;
+    } */
+    .droplist:after{
+      display: block;
+      content: "";
+      position:absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background-color: var(--blauwD);
+      transform: translateX(-50%);
+      transition: all 0.3 cubic-bezier(0.68, -0.55, 0.265. 1.55);
     }
-    .droplist:hover{
-     color:var(--blauwD);
+    .droplist:before{
+      position:absolute;
+      left: 50%;
+      width: 0%;
+      height: 3px;
+      background-color: var(--blauwD);
+      transform: translateX(-50%);
+      transition: all 0.3 cubic-bezier(0.68, -0.55, 0.265. 1.55);
+    }
+    .droplist:hover:after{
+   width: 100%;
     
+    }
+    .droplist:hover:before{
+      width: 100%;
     }
     .droplist:active{
       color:var(--blauwD) !important;
