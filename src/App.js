@@ -18,6 +18,9 @@ import Modal from './components/Modal';
   //elke dag nieuw menu toevoegen aan de vorige dag
   //in een week geen twee keer hetzelfde gerecht
 
+//MenuSelector in de plaats van Receptenlijst
+//ingredientenlijst useParam gebruiken en extra page maken om menu's te tonen  
+
 function App() {
  
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -47,7 +50,7 @@ setDay(day[date])
 setNewDay(newDays )
 },[])
 
-// weekmenu blijft niet meer staan enkel de dag van vandaag verandert
+
 
 
 console.log(menus)

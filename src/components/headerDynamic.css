@@ -216,3 +216,30 @@ margin-top: 5px;
 .btn-10 a:hover span:before{height:100%; -webkit-transition:all .1s .2s; -o-transition:all .1s .2s; transition:all .1s .2s;}
 .btn-10 a:hover span:after{width:100%;	-webkit-transition:all .1s .3s;	-o-transition:all .1s .3s; transition:all .1s .3s;}
 nav a:hover{color:#ffe800;}
+
+.menuSetter{
+  position: relative;
+  top: 200px;
+  left: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blauwD);
+  color: var(--blauwL);
+ padding: 50px;
+ align-items: center;
+}
+.menuSetter>h1{
+  font-size: 50px;
+}
+.menuSetterList{
+  list-style-type: none;
+  margin: 50px;
+  font-size: 30px;
+
+}
+.menuSetterRecipe{
+  font-size: 25px;
+
+
+}
