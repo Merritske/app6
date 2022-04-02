@@ -8,8 +8,8 @@ let men = menuS[0]
  
 
 <div className="menuSetter" > 
-
-          <img src="" alt="eten" />
+{/* 
+          <img src="" alt="eten" /> */}
           <h1>{men.title }</h1>
           <div >
             <ul className="menuSetterList">
@@ -17,7 +17,7 @@ let men = menuS[0]
                  {men.headIng.meat}
               </li>
               <li>
-                 {men.headIng.vegetable}
+                 {men.headIng.vegetable.join(" ")}
               </li>
               <li>
                  {men.headIng.pata}

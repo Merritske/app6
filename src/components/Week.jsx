@@ -67,7 +67,7 @@ function handlePrint (){
 return (<li key={index} >{item} </li>)
         })
     }
-   <button onClick={handlePrint}> Print </button>
+    <Button text="Print" click={handlePrint} color="" />
     <Button text="Close" click={()=>{setPrint(false)}} color="" />
     </ul>
 

@@ -64,13 +64,26 @@ export default function HeaderDynamic({ menu, day }) {
     return itemM.indexOf(c) === index;
   });
 
-  let itemV = []
+  let itemVa = []
   ingred.map((item) => {
-    return itemV.push(item.vegetable)
+    return itemVa.push(item.vegetable)
   })
+  let itemV = []
+  itemVa.map((i)=>{
+    for(let e of i){
+      if(e.length > 2){
+       itemV.push(e)
+      }else{
+        itemV.push(i)
+      }
+    }
+    return itemV
+  })
+
   let vegetable = itemV.filter((c, index) => {
     return itemV.indexOf(c) === index;
   });
+console.log(vegetable)
 
   let itemP = []
   ingred.map((item) => {
@@ -104,10 +117,10 @@ export default function HeaderDynamic({ menu, day }) {
   //zorgen dat het terug verdwijnt als ergens anders geklikt wordt
   //als op een ingredient geklikt wordt, al de recepten tonen die dit ingredient hebben IDEM voor recepten
   //zoekfunctie op ingredienten
-
+ const [menuSet, setMenuSet] = useState({}) 
   const [menuGetM, setMenuGetM] = useState([])
 
-  function menuGetter(e) {
+  function menuGetterM(e) {
     const newR = menu.filter((item) => {
       return item.headIng.meat.includes(e.target.innerText)
     })
@@ -119,26 +132,27 @@ export default function HeaderDynamic({ menu, day }) {
     // }
     // return menuGetM
     //     })
-
+  
   }
   const [menuGetV, setMenuGetV] = useState([])
 
-  function menuGetter(e) {
+  function menuGetterV(e) {
     const newR = menu.filter((item) => {
       return item.headIng.vegetable.includes(e.target.innerText)
     })
     setMenuGetV(newR)
+ 
   }
   const [menuGetP, setMenuGetP] = useState([])
 
-  function menuGetter(e) {
+  function menuGetterP(e) {
     const newR = menu.filter((item) => {
       return item.headIng.pata.includes(e.target.innerText)
     })
     setMenuGetP(newR)
   }
 
- const [menuSet, setMenuSet] = useState({}) 
+
  const [menuSetMenuSetter, setMenuSetMenusetter] = useState(false)
  
   function menuShow(e){
@@ -151,7 +165,18 @@ setMenuSetMenusetter(!menuSetMenuSetter)
   }
 console.log(menuSet)
 
+function closeBtn(){
+  setShowIng(!showIng)
+  setMenuGetM([])
+  setMenuGetV([])
+  setMenuGetP([])
 
+}
+function closeBtnR(){
+   setShow(!show)
+  setFilteredMenu([])
+}
+ 
   return (
     <div   >
       
@@ -190,7 +215,7 @@ console.log(menuSet)
 
       {show && <div className='dropdownMenu-recipe' >
 
-        <button className='dropmenuCloseBtn' onClick={() => show = true ? setShow(false) : setShow(true)}>Close</button>
+        <button className='dropmenuCloseBtn' onClick={closeBtnR}>Close</button>
 
 
        
@@ -201,13 +226,13 @@ console.log(menuSet)
           {filteredMenu.length !== 0 ?
             filteredMenu.map((item, index) => (
 
-              <li className='livalue' value={item.title} key={index} > {item.title}
+              <li className='ing' value={item.title} key={index} onClick={menuShow} > {item.title}
               </li>
 
             ))
             :
             menu.map((item, index) => (
-              <li className='livalue' value={item.title} key={index}  > {item.title}
+              <li className='ing' value={item.title} key={index} onClick={menuShow} > {item.title}
               </li>
             ))
           }
@@ -218,7 +243,7 @@ console.log(menuSet)
 
 
       {showIng && <div className='dropdownMenu-recipe' >
-        <button className='dropmenuCloseBtn' onClick={() => showIng = true ? setShowIng(false) : setShowIng(true)}>Close</button>
+        <button className='dropmenuCloseBtn' onClick={closeBtn}>Close</button>
 
 
 
@@ -228,14 +253,14 @@ console.log(menuSet)
             menuGetM.length !== 0 ?
          
                  menuGetM.map((item, index) => (
-                <li value={item} key={index} onClick={menuShow} >
+                <li className='ing' value={item} key={index} onClick={menuShow} >
                   {item.title}
                 </li> 
-                 
+              
               )) 
               :
               meat.map((item, index) => (
-                <li value={item} key={index} onClick={menuGetter} >
+                <li className='ing' value={item} key={index} onClick={menuGetterM} >
                   {item}
                 </li>
               ))
@@ -248,12 +273,12 @@ console.log(menuSet)
         {vegetableShow && <ul>
           {menuGetV.length !==0 ?
             menuGetV.map((item, index) => (
-              <li value={item} key={index} onClick={menuShow} >
+              <li className='ing' value={item} key={index} onClick={menuShow} >
                 {item.title}
               </li> ))
         :
           vegetable.map((item, index) => (
-            <li value={vegetable} key={index} onClick={menuGetter}  >
+            <li className='ing' value={vegetable} key={index} onClick={menuGetterV}  >
               {item}
             </li>))}
         </ul>}
@@ -264,12 +289,12 @@ console.log(menuSet)
         {pataShow && <ul>
           {menuGetP.length !==0 ?
             menuGetP.map((item, index) => (
-              <li value={item} key={index} onClick={menuShow} >
+              <li className='ing' value={item} key={index} onClick={menuShow} >
                 {item.title}
               </li> ))
         :
           pata.map((item, index) => (
-            <li value={pata} key={index} onClick={menuGetter} >
+            <li className='ing' value={pata} key={index} onClick={menuGetterP} >
               {item}
             </li>))}
         </ul>}

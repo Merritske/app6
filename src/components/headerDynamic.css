@@ -42,6 +42,10 @@
        text-align: start;
        
     }
+    .ing:hover{
+      cursor: pointer;
+      color: var(--blauwD);
+    }
 
     .dropdownMenu-ingred{
       display: block;
