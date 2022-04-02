@@ -1,8 +1,11 @@
 .App {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-image: url("https://image.shutterstock.com/image-vector/cafe-pattern-doodle-tea-pots-600w-693144967.jpg");
-  width: 100%;
+ 
+}
+body{
+   background-image: url("https://image.shutterstock.com/image-vector/cafe-pattern-doodle-tea-pots-600w-693144967.jpg");
+  width: 100vw;
 }
 :root{
   --blauwL : rgb(37, 180, 199);
@@ -95,4 +98,7 @@ width: 100vw;
   background-color: var(--paars);
   padding: 10px 30px;
   margin: 40px;
+}
+@media only screen and (min-width: 992px){
+  
 }

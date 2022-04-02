@@ -1,89 +1,119 @@
 .app-header {
-    position: fixed;
-    top: 150px;
-    width: 100%;
-    z-index: 2;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      background-color: var(--blauwL);
-      color: var(--paars);
-    }
-    .menu-header{
-      list-style: none;
-      display: flex;
-  
-      padding: 20px;
-    
-    }
-    .dropdownMenu-recipe{
-     position: absolute;
-     display: flex;
-  
-     flex-direction: row;
+  position: fixed;
+  top: 150px;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--blauwL);
+  color: var(--paars);
+}
+.header-title {
+  margin: 20px;
+}
+.menu-header {
+  list-style: none;
+  display: flex;
+  padding: 20px;
+}
 
-      z-index: 10;
-    top:200px;
- width: 100%;
-    height: fit-content;
-    font-size: 20px;
-      background-color: var(--blauwL) ;
-      color:var(--paars) ;
-     
-    }
-    .dropdownMenu-recipe>ul{
-      padding: 30px;
-       list-style-type: none;
-       margin: 30px;
-       position: relative;
-       left: 250px;
-       bottom: 40px;
-       text-align: start;
-       
-    }
-    .ing:hover{
-      cursor: pointer;
-      color: var(--blauwD);
-    }
+.droplist {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-inline: 30px;
+}
+.droplist:after,
+.droplist:before {
+  display: inline;
+  content: "";
+  width: 0%;
+  height: 5px;
+  background-color: var(--blauwD);
+  transform: translateX(-50%);
+  transition: all .5s;
+  position: absolute;
+}
+.droplist:hover:after {
+  width: 100%;
+  margin-top: 5px;
+}
+.droplist:hover:before {
+  width: 100%;
+  margin-top: -10px;
+}
+.droplist:hover,
+.droplist:active {
+  color: var(--blauwD) !important;
+}
+.dropdownMenu-ingred {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  z-index: 13;
+  font-size: 20px;
+  background-color: var(--blauwL);
+  color: var(--paars);
+}
+.droplistIng {
+  box-shadow: 8px 8px 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: var(--blauwL);
+  min-width: 180px;
+}
+.droplistIng>li {
+  color: var(--paars);
+  padding: 22px 30px;
+  text-decoration: none;
+  display: block;
+  z-index: 13;
+}
+.droplistIng>li:hover{
+  color: var(--blauwD);
+}
 
-    .dropdownMenu-ingred{
-      display: block;
-      z-index: 10;
-      position: absolute;
+.dropdownMenu-recipe {
+  position: absolute;
+  display: flex;
 
- 
-    z-index: 13;
-    font-size: 20px;
-      background-color:var(--blauwL);
-      color: var(--paars);
-    
-    }
-    
-    
-    .droplistIng{
-          box-shadow: 8px 8px 10px 10px rgba(0,0,0,0.2);
-      position: relative;
-    
-    background-color: var(--blauwL);
-      min-width: 180px;
+  flex-direction: row;
 
-    
-    }
-    .droplistIng>li{
-      color: var(--paars);
-      padding: 22px 30px;
-      text-decoration: none;
-      display: block; 
+  z-index: 10;
+  top: 200px;
+  width: 100%;
+  height: fit-content;
+  font-size: 20px;
+  background-color: var(--blauwL);
+  color: var(--paars);
 
-      z-index: 13;
-    }
-  
+}
 
- .spanDrop:hover{
-        color: var(--blauwD);
-    }
- /* .spanDrop:after, .spanDrop:before, .droplistIngL:before, .droplistIngL:after{
+.dropdownMenu-recipe>ul {
+  padding: 30px;
+  list-style-type: none;
+  margin: 30px;
+  position: relative;
+  left: 250px;
+  bottom: 40px;
+  text-align: start;
+
+}
+
+.ing:hover {
+  cursor: pointer;
+  color: var(--blauwD);
+}
+
+
+
+
+
+
+
+
+/* .spanDrop:after, .spanDrop:before, .droplistIngL:before, .droplistIngL:after{
       position: absolute;
       background-color: #ffe800;
       display: block;
@@ -143,85 +173,118 @@
     } */
 
 
-    .dropmenuCloseBtn{
-      padding: 10px 30px;
-   
-     background-color: var(--paars); 
-     color: var(--blauwL) ;
-     font-size: 30px;
-     border-radius: 5px;
-     z-index: inherit;
-    }
-    .dropmenuCloseBtn:hover{
-     background-color: var(--blauwL);
-     color: var(--blauwD);
-     cursor: pointer;
-     transform: scale(1.5, 1);
-     box-shadow: 0 0 5px 5px rgb(30,30,60) 
-    }
- 
-    .title:first-child {
-    padding: 20px;
-    font-size: 50px;
-    }
-    .header{
-     position: fixed;
-    text-align: center;
-      width: 100%;
-      height: 200px;
-      background-color: var(--blauwD);
-      color:var(--blauwL);
-    z-index: 1;
-    }
-    .header-title{
-      margin: 20px;
-    }
-    .droplist{
-      cursor: pointer;
-     position: relative;
-      display: inline-block;
-margin-inline: 30px;
-    } 
-   
-   
-    .droplist:after , .droplist:before{
-      display: inline;
-      content: "";
-      width: 0%;
-      height: 5px;
-      background-color: var(--blauwD);
-      transform: translateX(-50%);
-      transition:all .5s ;
-      position: absolute;
-    }
-  
-    .droplist:hover:after{
-   width: 100%;
-margin-top: 5px;
-    }
-    .droplist:hover:before{
-      width: 100%;
-      margin-top: -10px;
-    }
+.dropmenuCloseBtn {
+  padding: 10px 30px;
 
-    .droplist:hover, .droplist:active{
-      color:var(--blauwD) !important;
-     }
+  background-color: var(--paars);
+  color: var(--blauwL);
+  font-size: 30px;
+  border-radius: 5px;
+  z-index: inherit;
+}
 
-     .btn-10 a{padding:0;}
-.btn-10 a span{display:block; padding:0 30px;}
-.btn-10 a:before, .btn-10 a:after, .btn-10 a span:before, .btn-10 a span:after{position:absolute; background-color:#ffe800;}
-.btn-10 a:before{width:3px; height:0; left:0; bottom:0; -webkit-transition:all .1s .3s; -o-transition:all .1s .3s; transition:all .1s .3s;}
-.btn-10 a:after{width:0; height:3px; left:0; top:0; -webkit-transition:all .1s .2s; -o-transition:all .1s .2s; transition:all .1s .2s;}
-.btn-10 a span:before{width:3px; height:0; right:0; top:0; -webkit-transition:all .1s .1s; -o-transition:all .1s .1s; transition:all .1s .1s;}
-.btn-10 a span:after{width:0; height:3px; right:0; bottom:0; -webkit-transition:all .1s; -o-transition:all .1s; transition:all .1s;}
-.btn-10 a:hover:before{height:100%; -webkit-transition:all .1s; -o-transition:all .1s;	transition:all .1s;}
-.btn-10 a:hover:after{width:100%; -webkit-transition:all .1s .1s; -o-transition:all .1s .1s; transition:all .1s .1s;}
-.btn-10 a:hover span:before{height:100%; -webkit-transition:all .1s .2s; -o-transition:all .1s .2s; transition:all .1s .2s;}
-.btn-10 a:hover span:after{width:100%;	-webkit-transition:all .1s .3s;	-o-transition:all .1s .3s; transition:all .1s .3s;}
-nav a:hover{color:#ffe800;}
+.dropmenuCloseBtn:hover {
+  background-color: var(--blauwL);
+  color: var(--blauwD);
+  cursor: pointer;
+  transform: scale(1.5, 1);
+  box-shadow: 0 0 5px 5px rgb(30, 30, 60)
+}
 
-.menuSetter{
+
+
+/* 
+
+.btn-10 a {
+  padding: 0;
+}
+
+.btn-10 a span {
+  display: block;
+  padding: 0 30px;
+}
+
+.btn-10 a:before,
+.btn-10 a:after,
+.btn-10 a span:before,
+.btn-10 a span:after {
+  position: absolute;
+  background-color: #ffe800;
+}
+
+.btn-10 a:before {
+  width: 3px;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all .1s .3s;
+  -o-transition: all .1s .3s;
+  transition: all .1s .3s;
+}
+
+.btn-10 a:after {
+  width: 0;
+  height: 3px;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .1s .2s;
+  -o-transition: all .1s .2s;
+  transition: all .1s .2s;
+}
+
+.btn-10 a span:before {
+  width: 3px;
+  height: 0;
+  right: 0;
+  top: 0;
+  -webkit-transition: all .1s .1s;
+  -o-transition: all .1s .1s;
+  transition: all .1s .1s;
+}
+
+.btn-10 a span:after {
+  width: 0;
+  height: 3px;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
+}
+
+.btn-10 a:hover:before {
+  height: 100%;
+  -webkit-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
+}
+
+.btn-10 a:hover:after {
+  width: 100%;
+  -webkit-transition: all .1s .1s;
+  -o-transition: all .1s .1s;
+  transition: all .1s .1s;
+}
+
+.btn-10 a:hover span:before {
+  height: 100%;
+  -webkit-transition: all .1s .2s;
+  -o-transition: all .1s .2s;
+  transition: all .1s .2s;
+}
+
+.btn-10 a:hover span:after {
+  width: 100%;
+  -webkit-transition: all .1s .3s;
+  -o-transition: all .1s .3s;
+  transition: all .1s .3s;
+}
+
+nav a:hover {
+  color: #ffe800;
+}
+ */
+.menuSetter {
   position: relative;
   top: 200px;
   left: 0;
@@ -230,20 +293,160 @@ nav a:hover{color:#ffe800;}
   height: 100vh;
   background-color: var(--blauwD);
   color: var(--blauwL);
- padding: 50px;
- align-items: center;
+  padding: 50px;
+  align-items: center;
 }
-.menuSetter>h1{
+
+.menuSetter>h1 {
   font-size: 50px;
 }
-.menuSetterList{
+
+.menuSetterList {
   list-style-type: none;
   margin: 50px;
   font-size: 30px;
 
 }
-.menuSetterRecipe{
+
+.menuSetterRecipe {
   font-size: 25px;
 
+
+}
+
+@media only screen and (max-width: 768px) {
+  .app-header {
+    position: fixed;
+    top: 75px;
+    width: 100%;
+    height: 85px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: var(--blauwL);
+    color: var(--paars);
+  } 
+   .header-title {
+  margin: 0;
+  margin-top: 10px;
+    font-size: 20px;
+  }
+  .menu-header {
+    list-style: none;
+    font-size: 15px; 
+      padding: 0;
+  }
+.droplist {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-inline: 20px;
+}
+.droplist:after,
+.droplist:before {
+  display: inline;
+  content: "";
+  width: 0%;
+  height: 5px;
+  background-color: var(--blauwD);
+  transform: translateX(-50%);
+  transition: all .5s;
+  position: absolute;
+}
+.droplist:hover:after {
+  width: 100%;
+  margin-top: 5px;
+}
+.droplist:hover:before {
+  width: 100%;
+  margin-top: -10px;
+}
+.droplist:hover,
+.droplist:active {
+  color: var(--blauwD) !important;
+}
+.dropdownMenu-ingred {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  font-size: 20px;
+  background-color: var(--blauwL);
+  color: var(--paars);
+}
+.droplistIng {
+  box-shadow: 8px 8px 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: var(--blauwL);
+}
+.droplistIng>li {
+  color: var(--paars);
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  z-index: 13;
+}
+.btn{
+ visibility: hidden;
+ height: 0;
+ width: 0;
+ margin: 0;
+ font-size: 0;
+}
+.dropdownMenu-recipe {
+  position: absolute;
+  display: flex;
+
+  flex-direction: row;
+
+  z-index: 10;
+  top: 200px;
+  width: 100%;
+  height: fit-content;
+  font-size: 20px;
+  background-color: var(--blauwL);
+  color: var(--paars);
+
+}
+
+.dropdownMenu-recipe>ul {
+  padding: 30px;
+  list-style-type: none;
+  margin: 30px;
+  position: relative;
+  left: 250px;
+  bottom: 40px;
+  text-align: start;
+
+}
+
+.ing:hover {
+  cursor: pointer;
+  color: var(--blauwD);
+}
+
+
+
+
+
+
+
+.dropmenuCloseBtn {
+  padding: 10px 30px;
+
+  background-color: var(--paars);
+  color: var(--blauwL);
+  font-size: 30px;
+  border-radius: 5px;
+  z-index: inherit;
+}
+
+.dropmenuCloseBtn:hover {
+  background-color: var(--blauwL);
+  color: var(--blauwD);
+  cursor: pointer;
+  transform: scale(1.5, 1);
+  box-shadow: 0 0 5px 5px rgb(30, 30, 60)
+}
 
 }

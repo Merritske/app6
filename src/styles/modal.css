@@ -1,0 +1,65 @@
+.modal{
+    position: absolute;
+  top: 230px;
+ z-index:  150;
+  width:100%
+}
+
+.styleModal{
+   color: rgb(37, 180, 199);
+   background-color: rgb(6, 6, 124);
+margin-left: auto;
+margin-right: auto;
+   padding:50px ;
+ 
+}
+.modalTitle {
+margin: 30px;
+font-size: 50px;
+color: rgb(120,20,180)
+}
+.modalP  {
+      font-size: 20px;
+      padding: 10;
+  }
+.modalB{
+   background-color: rgb(37, 180, 199);
+  color: rgb(6, 6, 124);
+   font-size: 25px;
+   padding: 20px 30px;
+   border-radius: 10px;
+}
+.modalB:hover{
+   cursor: pointer;
+   background-color: var(--paars);
+   color: var(--blauwD);
+}
+@media only screen and (max-width: 768px){
+    .modal{
+     z-index:  150;
+    }
+    
+    .styleModal{
+       color: rgb(37, 180, 199);
+       background-color: rgb(6, 6, 124);
+      width:400px;
+    margin:auto;
+       padding:30px  ;
+    }
+    .modalTitle {
+    margin: 10px;
+    font-size: 20px;
+    color: rgb(120,20,180)
+    }
+    .modalP  {
+          font-size: 15px;
+          padding: 10px;
+      }
+    .modalB{
+       background-color: rgb(37, 180, 199);
+      color: rgb(6, 6, 124);
+       font-size: 15px;
+       padding: 10px;
+       border-radius: 10px;
+    }
+}
