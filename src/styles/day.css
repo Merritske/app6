@@ -125,7 +125,7 @@
   .dayComp-ingredBig {
     text-align: start;
     position: relative;
-    left:50px ;
+    left:0px ;
     margin-top: 10px;
     padding: 0;
     color: rgb(253, 226, 193);
@@ -133,6 +133,7 @@
 
   .dayComp-ingredBig>ul {
     list-style-type: none;
+    margin-left: 50px;
   }
 
   .recipe {
