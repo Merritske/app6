@@ -19,7 +19,7 @@
         "vegetable": ["wortelen", "tomaten", "ajuin"],
         "pata": "lasagna"
       },
-      "recipe":"Je kan zelf lasagna maken maar dan is het niet meer zo easy, het is te zeggen, dan heb je geoon veel tijd nodig. Probeer verschillende merken uit en kies diegene die het beste smaakt. Let op als op de verpakking staat dat je het ook in de magnetron kan klaar maken, verwijder eerst het aluminium bakje.",
+      "recipe":"Je kan zelf lasagna maken maar dan is het niet meer zo easy, het is te zeggen, dan heb je gewoon veel tijd nodig. Probeer verschillende merken uit en kies diegene die het beste smaakt. Let op als op de verpakking staat dat je het ook in de magnetron kan klaar maken, verwijder eerst het aluminium bakje.",
       "type": "easy"
     },
     {
@@ -177,8 +177,8 @@
     {
       "title": "ravioli",
       "headIng": {
-        "meat": ["ravioli"],
-        "vegetable": "",
+        "meat": "ravioli",
+        "vegetable": [""],
         "pata": ""
       },
       "recipe": "Open het conservenblik en zet het op een laag vuurtje. Een extra bouillonblokje is niet nodig. ",

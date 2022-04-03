@@ -23,7 +23,7 @@ import Modal from './components/Modal';
 
 function App() {
  
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+let days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"]
 let date = new Date().getDay()
 //push gebruiken of via useState de value of newDays veranderen?
 //[...newDays, en dan de rest van de days arrray invoegen

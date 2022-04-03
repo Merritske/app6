@@ -2,7 +2,7 @@
 //import { useEffect, useState } from "react"
 
 import { useState } from "react"
-import "./day.css"
+import "../styles/day.css"
 
 
 
@@ -47,7 +47,7 @@ export default function Day({ menu, day, ingredi, recipe }) {
       {/* 
           <img src="" alt="eten" /> */}
       <h1>{menu}</h1>
-      <p className="dayComp-ingred">Some extra's, eventueel hoofdingrediënten of enkel als je erop klikt...</p>
+      <p className="dayComp-ingred">Toont hoofdingrediënten en recept als je erop klikt...</p>
     </div>
       : <div className="dayCompBig" >
         <h2 className="dayComp-dayBig" >

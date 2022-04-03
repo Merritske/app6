@@ -1,5 +1,5 @@
 import React from 'react'
-import '../components/headerDynamic.css'
+import '../styles/menuSetter.css'
 
 export default function MenuSetter({ menuS }) {
 

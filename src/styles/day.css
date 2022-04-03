@@ -1,0 +1,142 @@
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.dayComp:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  z-index: 2;
+  box-shadow: 0 0 5px 2px aquamarine, 0 0 5px 5px grey;
+}
+
+.dayComp {
+  border: 2px solid black;
+  width: 500px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgba(30, 30, 60, 0.8);
+  color: rgb(253, 226, 193);
+  padding: 30px;
+}
+
+.dayComp-day {
+  color: rgb(206, 144, 68);
+  font-size: 30px;
+}
+
+.dayComp-ingred {
+  color: rgb(124, 92, 52);
+}
+
+.dayCompBig {
+  width: 450px;
+  height: fit-content;
+  position: absolute;
+  top: 440px;
+  transform: scale(2);
+  background-image: linear-gradient(-25deg, blue 0%, rgb(68, 199, 199) 100%);
+  color: rgb(253, 226, 193);
+  z-index: 4;
+  transition: all .5s;
+}
+
+.dayComp-dayBig {
+  color: rgb(206, 144, 68);
+  margin: 30px;
+}
+
+.dayComp-ingredBig {
+  text-align: start;
+  position: relative;
+  left: 75px;
+  margin-top: 30px;
+  padding: 20px;
+  color: rgb(253, 226, 193);
+}
+
+.dayComp-ingredBig>ul {
+  list-style-type: none;
+}
+
+.recipe {
+  color: rgb(37, 180, 199);
+  margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+    top: -90px;
+  }
+
+  .dayComp:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    z-index: 2;
+    box-shadow: 0 0 5px 2px aquamarine, 0 0 5px 5px grey;
+  }
+
+  .dayComp {
+    border: 2px solid black;
+    width: 80%;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 60, 0.8);
+    color: rgb(253, 226, 193);
+    padding: 20px;
+    font-size: 70%;
+  }
+
+  .dayComp-day {
+    color: rgb(206, 144, 68);
+    font-size: 20px;
+  }
+
+  .dayComp-ingred {
+    color: rgb(124, 92, 52);
+  }
+
+  .dayCompBig {
+    width: 250px;
+    height: fit-content;
+    position: relative;
+    top: 0;
+    transform: scale(1.5);
+    background-image: linear-gradient(-25deg, blue 0%, rgb(68, 199, 199) 100%);
+    color: rgb(253, 226, 193);
+    z-index: 4;
+    transition: transform .5s;
+    font-size: 50%;
+    padding: 10px;
+  }
+
+  .dayComp-dayBig {
+    color: rgb(206, 144, 68);
+    margin: 10px;
+  }
+
+  .dayComp-ingredBig {
+    text-align: start;
+    position: relative;
+    left:0 ;
+    margin-top: 10px;
+    padding: 0;
+    color: rgb(253, 226, 193);
+  }
+
+  .dayComp-ingredBig>ul {
+    list-style-type: none;
+  }
+
+  .recipe {
+    color: rgb(37, 180, 199);
+    margin: 10px;
+  }
+}

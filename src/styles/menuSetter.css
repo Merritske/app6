@@ -1,0 +1,62 @@
+
+
+.menuSetter {
+    position: relative;
+    top: 200px;
+    left: 0;
+    z-index: 200;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blauwD);
+    color: var(--blauwL);
+    padding: 50px;
+    align-items: center;
+  }
+  
+  .menuSetter>h1 {
+    font-size: 50px;
+  }
+  
+  .menuSetterList {
+    list-style-type: none;
+    margin: 50px;
+    font-size: 30px;
+  
+  }
+  
+  .menuSetterRecipe {
+    font-size: 25px;
+  
+  
+  }
+  
+@media only screen and (max-width: 768px){
+
+
+    .menuSetter {
+        position: relative;
+        top: 70px;
+        left: 0;
+        z-index: 200;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--blauwD);
+        color: var(--blauwL);
+        padding: 30px;
+        align-items: center;
+      }
+      
+      .menuSetter>h1 {
+        font-size: 25px;
+      }
+      
+      .menuSetterList {
+        list-style-type: none;
+        margin: 20px;
+        font-size: 20px;
+      }
+      .menuSetterRecipe {
+        font-size: 15px;
+      }
+
+}

@@ -1,9 +1,9 @@
 import Button from './Button';
 import ImportMenu from './ImportMenu';
 import { useEffect, useState } from 'react';
-import "./headerDynamic.css"
+import "../styles/headerDynamic.css"
 import DB from "./db.json"
-import MenuSetter from '../Pages/MenuSetter';
+import MenuSetter from './MenuSetter';
 import { Link } from 'react-router-dom';
 //dropdownmenu met recepten
 //kiezen op ingrediënten 
@@ -216,10 +216,10 @@ export default function HeaderDynamic({ menu, day }) {
 
       {show && <div className='dropdownMenu-recipe' >
 
-        <button className='dropmenuCloseBtn' onClick={closeBtnR}>Close</button>
+       
 
 
-
+   <button className='dropmenuCloseBtn' onClick={closeBtnR}>Close</button>
         {<ul >
 
 
@@ -238,7 +238,8 @@ export default function HeaderDynamic({ menu, day }) {
             ))
           }
 
-        </ul>}
+        </ul>} 
+     
       </div>}
 
 

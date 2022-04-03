@@ -76,7 +76,7 @@ width: 180px;
   transform: scale(1.2);
   box-shadow: 0 0 5px 5px rgb(30,30,60) ;
 }
-
+/*enkel in grote, niet voor mobiel*/
 .printLijst{
   list-style-type: none;
  text-align: center;
@@ -99,6 +99,4 @@ width: 100vw;
   padding: 10px 30px;
   margin: 40px;
 }
-@media only screen and (min-width: 992px){
-  
-}
+/* voor mobiel moet hier niets veranderen*/
